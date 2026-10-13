@@ -18,7 +18,7 @@
 
 \section{Abstract}
 Autonomous mobile robots are often required to navigate unknown environments to reach prespecified goals safely. 
-In many real world settings, however, a prior map of the environment may not be available, requiring the robot to navigate the unknown environment using only local sensor observations and relative goal information.
+In many real-world settings, however, a prior map of the environment may not be available, requiring the robot to navigate the unknown environment using only local sensor observations and relative goal information.
 Mapless navigation methods allow a mobile robot to make navigation decisions without relying on a complete representation of the environment. 
 This project will investigate whether Deep Reinforcement Learning (DRL) methodologies can perform mapless navigation to reach a goal using range measurements collected from a LiDAR sensor, relative goal distance, and relative goal bearing. 
 Two DRL algorithms, Soft Actor-Critic (SAC) and Twin Delayed Deep Deterministic Policy Gradient (TD3), will be compared against the Dynamic Window Approach (DWA) under common environmental constraints. 
@@ -29,12 +29,12 @@ Performance will be compared using measures such as navigation success, collisio
 Autonomous mobile robots are widespread in society today and have applications in many domains, including navigating warehouses \cite{keith2024reviewautonomousmobilerobots}, healthcare environments \cite{electronics12234791}, retail, hospitality, and security and surveillance \cite{cognominal2021evolving}.
 Many of these applications of autonomous mobile robots allow for the robot to be given a clear definition of the environment it is tasked with navigating; for example, warehouses and hospitals are clearly defined environments where the locations of stations and equipment are generally well known.
 In these applications, a detailed map of the environment may be available, allowing the robot to localize itself and globally plan a route to its destination. 
-In other applications, a prior map is not available, which requires the robot to complete simultaneous localization and mapping (SLAM), where the robot can estimate its position while constructing a representation of the environment \cite{Durrant_Bailey} \cite{Loganathan}.
+In other applications, a prior map is not available, which requires the robot to navigate the environment using another technique, such as, simultaneous localization and mapping (SLAM), where the robot can estimate its position while constructing a representation of the environment \cite{Durrant_Bailey} \cite{Loganathan}.
 The standard approach of using SLAM along with a path planning algorithm and control system performs well in static environments.
 However, such static environments are not always guaranteed, and with the introduction of dynamically changing environments or stricter time restrictions, the standard approach becomes increasingly less feasible. 
 With dynamic environments, sustaining a map of the environment becomes impractical with constantly changing landmarks and obstacles leading to a high computational cost as the environment changes.
 Additionally, there may be environments in which the robot needs to be operational immediately without time to learn the environment through exploration. 
-For such cases, mapless goal-directed navigation methods can be employed which would allow the robot to only use local sensor information along with generalizable goal information \cite{Dobrevski_Skočaj_2021}.
+For such cases, mapless goal-directed navigation methods can be employed which would allow the robot to only use local sensor information along with relative goal information \cite{Dobrevski_Skočaj_2021}.
 This project aims to explore such kinds of navigation methods in mobile robots that may be deployable in previously unseen dynamic environments \cite{Tai_Lei}.
 \par
 The first algorithm that will be evaluated in unknown environments will be the Dynamic Window Approach, which will work as a baseline against which to evaluate the remaining two DRL algorithms.
@@ -42,23 +42,23 @@ DWA is a local reactive method that allows for collision avoidance and local mot
 DWA approaches the problem of both local motion planning and collision avoidance by first directly searching the space of velocities and secondly choosing the velocities that maximize an objective function. 
 This is done by accounting for the actual motion dynamics of the robot, considering what velocities are attainable within the dynamic window, and rejecting unsafe velocities in order to prune the search space.
 Then, velocities are chosen via the objective function which considers progress towards the goal, clearance of nearby obstacles, and velocity of the robot. 
-Choosing velocities by maximizing this objective function allows the DWA to perform mapless goal directed navigation in unseen environments without needing a learning algorithm or any previous training.
+Choosing velocities by maximizing this objective function allows the DWA to perform mapless goal-directed navigation in unseen environments without needing a learning algorithm or any previous training.
 \par
 The two DRL algorithms chosen for this project are Soft Actor-Critic (SAC) and Twin Delayed Deep Deterministic Policy Gradient (TD3).
-These DRL algorithms were chosen because they are both designed for continuous control problems which makes them suitable for robot navigation problems where state, observation, and action spaces are all continuous. 
+These DRL algorithms were chosen because they are both designed for continuous control problems which makes them suitable for robot navigation problems where state, observation, and especially action spaces are all continuous. 
 SAC is an off-policy actor-critic algorithm that is capable of learning both a policy and value function \cite{Haarnoja_SAC}.
-SAC also maximizes the expected reward with policy entropy.
+SAC also maximizes the expected reward while also encouraging policy entropy.
 As a result, SAC is able to encourage exploration while helping reduce premature convergence due to poor decisions.
 TD3 is also an off-policy actor-critic algorithm; however, TD3 was designed to reduce value-estimation errors that would otherwise destabilize similar deterministic continuous control algorithms \cite{Fujimoto_TD3}.
 TD3 addresses this by using two critic networks, delayed policy updates, and target-policy smoothing.
 Both DRL algorithms have previously been used in continuous robotic control problems, and DRL has been applied to mapless mobile robot navigation using local range sensing and relative target information \cite{Tai_Lei} \cite{8202312}.
-Comparing SAC and TD3 under the same navigation tasks would provide a useful comparison between both approaches to exploration and value estimation and how these can lead to differences in navigation reliability, efficiency, and generalization \cite{Dobrevski_Skočaj_2021} \cite{Tai_Lei}.
+Comparing SAC and TD3 under the same navigation tasks will allows us to evaluate how differences in their policy-learning and value-estimation strategies affect navigation reliability, efficiency, and generalization \cite{Dobrevski_Skočaj_2021} \cite{Tai_Lei}.
 
 The experiments we complete will compare SAC, TD3, and the DWA under a common mapless goal-directed navigation framework.
 Each method will receive comparable local range measurements, the distance and bearing to the goal, and the robot's current motion information.
 Using the information provided, each method will generate a translational and rotational velocity command for a differential-drive mobile robot. 
-SAC and TD3 will be trained in a physics-based simulation which will randomly generate starting positions, goal locations, static obstacles, and some dynamic moving obstacles. 
-DWA will operate without training as the classic baseline, since it is not a learned algorithm \cite{Fox_Burgand}.
+SAC and TD3 will be trained in a physics-based simulation which will randomly generate starting positions, goal locations, static obstacles, and some dynamic obstacles. 
+DWA will operate without training as the classical baseline, since it is not a learned algorithm \cite{Fox_Burgand}.
 After training, the learned policies from SAC and TD3 will be frozen and evaluated together with DWA in previously unseen environments to ensure the performance reflects generalization rather than memorization.
 The methods will be compared using metrics such as goal-reaching success rate, collision rate, path length, travel time, path efficiency, and obstacle clearance.
 Once the simulated policies are reliably performing in the simulated environments, the same navigation approaches will be tested on a TurtleBot2 in controlled indoor environments to evaluate simulation to real transfer \cite{Tai_Lei} \cite{Yan_2D}.
@@ -68,13 +68,13 @@ Once the simulated policies are reliably performing in the simulated environment
 \begin{enumerate}
     \item Understand the TurtleBot2 and ROS for physics-based simulations and real-world experiments.
 
-    \item Understand basics of reinforcement learning and more specifically, how it can be used for path planning for a robot navigating in an unknown environment.
+    \item Understand basics of reinforcement learning, and more specifically, how it can be used for mobile robot navigation in an unknown environment.
 
     \item Develop the RL environment and reward function for SAC and TD3 algorithms, then complete training in simulated environments. 
 
     \item Implement the three methods (SAC, TD3, DWA) in a simulated environment to evaluate differences.
 
-    \item Experiment with these algorithms in the real world by testing them on the TurtleBot2.
+    \item Experiment with these algorithms in the real-world by testing them on the TurtleBot2.
 \end{enumerate}
 
 \begin{itemize}
@@ -108,13 +108,13 @@ Once the simulated policies are reliably performing in the simulated environment
 
 Because we will be working with a physical robot, it is important to prioritize our safety and the safety of those around of us. In addition, because we will be using the TurtleBot2 for navigation in an obstacle-filled environment, we will need to find a suitable environment and obstacles that are robust to handle potential collisions with the TurtleBot2.
 
-If we have questions or concerns, we will get into contact with Travis Henderson, who manages the robots for MnRI.
+If we have questions or concerns, we will contact Travis Henderson, who manages the robots for MnRI.
 
 Our project will start in a simulated environment and then transition into a real-world scenario, so we will also need to consider this sim-to-real gap and the problems that may arise, such as software and hardware compatibility on the TurtleBot2 compared with what we have running in our simulated environment.
 
 Machine learning algorithms come with their own challenges that need to be overcome throughout the process of training and testing.
 Some potential risks include RL training instability, failure to converge on a policy, excessive training time or computational costs, and overfitting of SAC or TD3 in the training environment.
-Many of the risks faced during training can be mitigated through an iterative reward-function refinement and hyperparameter tuning.
+Many of the risks faced during training can be mitigated through iterative reward-function refinement and hyperparameter tuning.
 Other techniques to prevent overfitting and failure to converge would be to gradually increase the complexity and randomization of the training environments, while preserving unseen environments for testing.
 Additionally, risks in excessive training time and computational costs could be mitigated either through the use of University-provided computational resources or by reducing the size of the observation space and down-sampling the LiDAR data. 
 
