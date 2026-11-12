@@ -7,6 +7,15 @@ PI_IP = ""  # Replace with IP address of Pi
 
 ws = websocket.create_connection(f"ws://{PI_IP}:9090", timeout=5)
 
+# This function allows a connection to be made before commands (i.e. "move") are sent.
+# If the "move" command is the first command sent, then it's also trying to create a connection at the same time, which results in some of the "move" commands getting dropped.
+def advertise():
+    message = {
+        "op": "advertise",
+        "topic": "/cmd_vel",
+        "type": "geometry_msgs/Twist",
+    }
+    ws.send(json.dumps(message))
 
 def move(linear=0.0, angular=0.0):
     """
@@ -48,6 +57,8 @@ def drive_for(linear, angular, duration):
 
 def main():
     try:
+        advertise()
+        time.sleep(1.0)
         print("Moving Forward")
         drive_for(0.05, 0.0, 1.0)
         drive_for(0.0, 0.0, 0.5)
