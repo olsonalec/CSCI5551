@@ -1,0 +1,982 @@
+{
+  "version": 2,
+  "task": "mixed_randomized",
+  "phase": null,
+  "split": "validation",
+  "run_seed": 0,
+  "training_steps": 317500,
+  "difficulty_mix": [
+    {
+      "name": "empty",
+      "weight": 0.1,
+      "static_min": 0,
+      "static_max": 0,
+      "moving_min": 0,
+      "moving_max": 0
+    },
+    {
+      "name": "sparse_static",
+      "weight": 0.2,
+      "static_min": 1,
+      "static_max": 2,
+      "moving_min": 0,
+      "moving_max": 0
+    },
+    {
+      "name": "dense_static",
+      "weight": 0.25,
+      "static_min": 3,
+      "static_max": 6,
+      "moving_min": 0,
+      "moving_max": 0
+    },
+    {
+      "name": "static_and_moving",
+      "weight": 0.45,
+      "static_min": 2,
+      "static_max": 6,
+      "moving_min": 1,
+      "moving_max": 2
+    }
+  ],
+  "seeds": [
+    519337352895579484,
+    540230571295284273,
+    7750763856324182382,
+    8724106440322672569,
+    1134355053165122850,
+    997250530426154703,
+    2063079001637723828,
+    3647147377885932916,
+    2123536243108762839,
+    6973579339107737559
+  ],
+  "cases": [
+    {
+      "scenario_seed": 519337352895579484,
+      "split": "validation",
+      "difficulty": "static_and_moving",
+      "static_count": 2,
+      "moving_count": 2,
+      "scenario": {
+        "start": [
+          -2.2108624368719587,
+          -0.18126975234605824,
+          0.9536536888188067
+        ],
+        "goal": [
+          0.9845078367941124,
+          0.9370930965188151
+        ],
+        "obstacles": [
+          {
+            "x": 1.5193889944335466,
+            "y": -1.5476407862608461,
+            "radius": 0.26751843637059297,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 5.228735219329844
+          },
+          {
+            "x": -0.3513313816282244,
+            "y": -2.1716114625123164,
+            "radius": 0.21890308843612627,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 1.7676131168003162
+          },
+          {
+            "x": -1.5055062602772775,
+            "y": -1.6960113716150524,
+            "radius": 0.27315990833992093,
+            "amplitude": 0.25,
+            "period": 12.0,
+            "phase": 3.5793731498207535
+          },
+          {
+            "x": -0.7368082357196888,
+            "y": 1.3718525640092587,
+            "radius": 0.25012604990333864,
+            "amplitude": 0.25,
+            "period": 12.0,
+            "phase": 2.5034472438279343
+          }
+        ],
+        "room_half": 3.0
+      }
+    },
+    {
+      "scenario_seed": 540230571295284273,
+      "split": "validation",
+      "difficulty": "sparse_static",
+      "static_count": 1,
+      "moving_count": 0,
+      "scenario": {
+        "start": [
+          0.7805960052066824,
+          -1.3980004456017574,
+          -2.043794606358992
+        ],
+        "goal": [
+          -1.290165413501817,
+          -0.47033040563101536
+        ],
+        "obstacles": [
+          {
+            "x": -1.3059293513623171,
+            "y": 0.4681942080882955,
+            "radius": 0.16695411929949172,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 5.388796974167273
+          }
+        ],
+        "room_half": 3.0
+      }
+    },
+    {
+      "scenario_seed": 7750763856324182382,
+      "split": "validation",
+      "difficulty": "static_and_moving",
+      "static_count": 3,
+      "moving_count": 1,
+      "scenario": {
+        "start": [
+          1.1874749768133874,
+          2.4829647785065494,
+          -2.8310285977713905
+        ],
+        "goal": [
+          0.3728725966391605,
+          -2.407059998345874
+        ],
+        "obstacles": [
+          {
+            "x": -0.05838506290692936,
+            "y": 0.7038501347998587,
+            "radius": 0.20343500717095347,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 2.533126255094756
+          },
+          {
+            "x": 2.1221376529495064,
+            "y": 2.3562148884838474,
+            "radius": 0.18611116363427954,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 3.863818797207336
+          },
+          {
+            "x": 1.4398164861022966,
+            "y": 1.3650914603213953,
+            "radius": 0.2610272304546449,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 1.9413852438153503
+          },
+          {
+            "x": -1.4654197740698276,
+            "y": 1.889249740790412,
+            "radius": 0.22929228092160078,
+            "amplitude": 0.25,
+            "period": 12.0,
+            "phase": 0.7655449474824159
+          }
+        ],
+        "room_half": 3.0
+      }
+    },
+    {
+      "scenario_seed": 8724106440322672569,
+      "split": "validation",
+      "difficulty": "empty",
+      "static_count": 0,
+      "moving_count": 0,
+      "scenario": {
+        "start": [
+          -1.5219933842964424,
+          -1.4314869371549432,
+          -2.057187147613286
+        ],
+        "goal": [
+          1.334528226637972,
+          -2.3919416327208487
+        ],
+        "obstacles": [],
+        "room_half": 3.0
+      }
+    },
+    {
+      "scenario_seed": 1134355053165122850,
+      "split": "validation",
+      "difficulty": "sparse_static",
+      "static_count": 1,
+      "moving_count": 0,
+      "scenario": {
+        "start": [
+          -0.6522824642063468,
+          0.4871740147199649,
+          2.6944569838044377
+        ],
+        "goal": [
+          1.671701723727429,
+          1.1823745277428737
+        ],
+        "obstacles": [
+          {
+            "x": -0.7202321926926366,
+            "y": -0.8787350507259366,
+            "radius": 0.24311600624339397,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 1.4709066372507782
+          }
+        ],
+        "room_half": 3.0
+      }
+    },
+    {
+      "scenario_seed": 997250530426154703,
+      "split": "validation",
+      "difficulty": "sparse_static",
+      "static_count": 2,
+      "moving_count": 0,
+      "scenario": {
+        "start": [
+          -2.0042502093881227,
+          0.012627238318022593,
+          1.7483821275315303
+        ],
+        "goal": [
+          0.46172339183761957,
+          0.3516154058379961
+        ],
+        "obstacles": [
+          {
+            "x": -0.8103072894721569,
+            "y": 2.2602384130260162,
+            "radius": 0.1687164377589245,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 2.051011671538109
+          },
+          {
+            "x": -1.5055756687478947,
+            "y": -2.189960684152432,
+            "radius": 0.18524534985100083,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 3.480258805670454
+          }
+        ],
+        "room_half": 3.0
+      }
+    },
+    {
+      "scenario_seed": 2063079001637723828,
+      "split": "validation",
+      "difficulty": "dense_static",
+      "static_count": 4,
+      "moving_count": 0,
+      "scenario": {
+        "start": [
+          0.6791602603312996,
+          -0.6593501068132201,
+          2.410148274122262
+        ],
+        "goal": [
+          2.262479462192028,
+          -0.5791788567710504
+        ],
+        "obstacles": [
+          {
+            "x": 0.32606535870081005,
+            "y": -2.3058123670958306,
+            "radius": 0.24748311085190677,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 3.9274825601786136
+          },
+          {
+            "x": 1.8058334581948163,
+            "y": 0.7280371810449378,
+            "radius": 0.20074467952069452,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 5.954904311313706
+          },
+          {
+            "x": 0.7030018189195537,
+            "y": 0.560114624444711,
+            "radius": 0.2661785233324571,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 0.42344192923534596
+          },
+          {
+            "x": -2.2638236546303694,
+            "y": -0.7736026332023247,
+            "radius": 0.1941521977567189,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 1.3485466921751488
+          }
+        ],
+        "room_half": 3.0
+      }
+    },
+    {
+      "scenario_seed": 3647147377885932916,
+      "split": "validation",
+      "difficulty": "sparse_static",
+      "static_count": 2,
+      "moving_count": 0,
+      "scenario": {
+        "start": [
+          0.20196187185392067,
+          1.6187640168630217,
+          -1.528852838942367
+        ],
+        "goal": [
+          1.1709832627458117,
+          -0.38690333990755554
+        ],
+        "obstacles": [
+          {
+            "x": -0.979246857255824,
+            "y": -1.5492994076302427,
+            "radius": 0.1781578807655961,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 2.081239778378531
+          },
+          {
+            "x": 0.38971263222783076,
+            "y": -0.26125770640071844,
+            "radius": 0.24726552173941624,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 1.1437617521104677
+          }
+        ],
+        "room_half": 3.0
+      }
+    },
+    {
+      "scenario_seed": 2123536243108762839,
+      "split": "validation",
+      "difficulty": "sparse_static",
+      "static_count": 1,
+      "moving_count": 0,
+      "scenario": {
+        "start": [
+          -1.2398520379188316,
+          -1.6897159297723707,
+          0.2910047066413362
+        ],
+        "goal": [
+          -0.3757237095852195,
+          0.7613185910415798
+        ],
+        "obstacles": [
+          {
+            "x": 2.410738511022695,
+            "y": -1.5312533304495894,
+            "radius": 0.17329044843833183,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 0.7277073066472256
+          }
+        ],
+        "room_half": 3.0
+      }
+    },
+    {
+      "scenario_seed": 6973579339107737559,
+      "split": "validation",
+      "difficulty": "dense_static",
+      "static_count": 3,
+      "moving_count": 0,
+      "scenario": {
+        "start": [
+          -1.0500050207326939,
+          2.1568772145012187,
+          -0.8017203043965566
+        ],
+        "goal": [
+          -0.338029498846536,
+          -2.1957824549803555
+        ],
+        "obstacles": [
+          {
+            "x": -1.5682175805460707,
+            "y": -1.8552898180871393,
+            "radius": 0.2543077535872398,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 3.2021613052151325
+          },
+          {
+            "x": -0.6158157249122214,
+            "y": 1.6049505294421038,
+            "radius": 0.1882129351623303,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 2.801207776646897
+          },
+          {
+            "x": 1.0968447856558718,
+            "y": 0.9940793393287659,
+            "radius": 0.210109188667426,
+            "amplitude": 0.0,
+            "period": 12.0,
+            "phase": 3.201562495442072
+          }
+        ],
+        "room_half": 3.0
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "start": [
+        -2.2108624368719587,
+        -0.18126975234605824,
+        0.9536536888188067
+      ],
+      "goal": [
+        0.9845078367941124,
+        0.9370930965188151
+      ],
+      "obstacles": [
+        {
+          "x": 1.5193889944335466,
+          "y": -1.5476407862608461,
+          "radius": 0.26751843637059297,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 5.228735219329844
+        },
+        {
+          "x": -0.3513313816282244,
+          "y": -2.1716114625123164,
+          "radius": 0.21890308843612627,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 1.7676131168003162
+        },
+        {
+          "x": -1.5055062602772775,
+          "y": -1.6960113716150524,
+          "radius": 0.27315990833992093,
+          "amplitude": 0.25,
+          "period": 12.0,
+          "phase": 3.5793731498207535
+        },
+        {
+          "x": -0.7368082357196888,
+          "y": 1.3718525640092587,
+          "radius": 0.25012604990333864,
+          "amplitude": 0.25,
+          "period": 12.0,
+          "phase": 2.5034472438279343
+        }
+      ],
+      "room_half": 3.0
+    },
+    {
+      "start": [
+        0.7805960052066824,
+        -1.3980004456017574,
+        -2.043794606358992
+      ],
+      "goal": [
+        -1.290165413501817,
+        -0.47033040563101536
+      ],
+      "obstacles": [
+        {
+          "x": -1.3059293513623171,
+          "y": 0.4681942080882955,
+          "radius": 0.16695411929949172,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 5.388796974167273
+        }
+      ],
+      "room_half": 3.0
+    },
+    {
+      "start": [
+        1.1874749768133874,
+        2.4829647785065494,
+        -2.8310285977713905
+      ],
+      "goal": [
+        0.3728725966391605,
+        -2.407059998345874
+      ],
+      "obstacles": [
+        {
+          "x": -0.05838506290692936,
+          "y": 0.7038501347998587,
+          "radius": 0.20343500717095347,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 2.533126255094756
+        },
+        {
+          "x": 2.1221376529495064,
+          "y": 2.3562148884838474,
+          "radius": 0.18611116363427954,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 3.863818797207336
+        },
+        {
+          "x": 1.4398164861022966,
+          "y": 1.3650914603213953,
+          "radius": 0.2610272304546449,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 1.9413852438153503
+        },
+        {
+          "x": -1.4654197740698276,
+          "y": 1.889249740790412,
+          "radius": 0.22929228092160078,
+          "amplitude": 0.25,
+          "period": 12.0,
+          "phase": 0.7655449474824159
+        }
+      ],
+      "room_half": 3.0
+    },
+    {
+      "start": [
+        -1.5219933842964424,
+        -1.4314869371549432,
+        -2.057187147613286
+      ],
+      "goal": [
+        1.334528226637972,
+        -2.3919416327208487
+      ],
+      "obstacles": [],
+      "room_half": 3.0
+    },
+    {
+      "start": [
+        -0.6522824642063468,
+        0.4871740147199649,
+        2.6944569838044377
+      ],
+      "goal": [
+        1.671701723727429,
+        1.1823745277428737
+      ],
+      "obstacles": [
+        {
+          "x": -0.7202321926926366,
+          "y": -0.8787350507259366,
+          "radius": 0.24311600624339397,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 1.4709066372507782
+        }
+      ],
+      "room_half": 3.0
+    },
+    {
+      "start": [
+        -2.0042502093881227,
+        0.012627238318022593,
+        1.7483821275315303
+      ],
+      "goal": [
+        0.46172339183761957,
+        0.3516154058379961
+      ],
+      "obstacles": [
+        {
+          "x": -0.8103072894721569,
+          "y": 2.2602384130260162,
+          "radius": 0.1687164377589245,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 2.051011671538109
+        },
+        {
+          "x": -1.5055756687478947,
+          "y": -2.189960684152432,
+          "radius": 0.18524534985100083,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 3.480258805670454
+        }
+      ],
+      "room_half": 3.0
+    },
+    {
+      "start": [
+        0.6791602603312996,
+        -0.6593501068132201,
+        2.410148274122262
+      ],
+      "goal": [
+        2.262479462192028,
+        -0.5791788567710504
+      ],
+      "obstacles": [
+        {
+          "x": 0.32606535870081005,
+          "y": -2.3058123670958306,
+          "radius": 0.24748311085190677,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 3.9274825601786136
+        },
+        {
+          "x": 1.8058334581948163,
+          "y": 0.7280371810449378,
+          "radius": 0.20074467952069452,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 5.954904311313706
+        },
+        {
+          "x": 0.7030018189195537,
+          "y": 0.560114624444711,
+          "radius": 0.2661785233324571,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 0.42344192923534596
+        },
+        {
+          "x": -2.2638236546303694,
+          "y": -0.7736026332023247,
+          "radius": 0.1941521977567189,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 1.3485466921751488
+        }
+      ],
+      "room_half": 3.0
+    },
+    {
+      "start": [
+        0.20196187185392067,
+        1.6187640168630217,
+        -1.528852838942367
+      ],
+      "goal": [
+        1.1709832627458117,
+        -0.38690333990755554
+      ],
+      "obstacles": [
+        {
+          "x": -0.979246857255824,
+          "y": -1.5492994076302427,
+          "radius": 0.1781578807655961,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 2.081239778378531
+        },
+        {
+          "x": 0.38971263222783076,
+          "y": -0.26125770640071844,
+          "radius": 0.24726552173941624,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 1.1437617521104677
+        }
+      ],
+      "room_half": 3.0
+    },
+    {
+      "start": [
+        -1.2398520379188316,
+        -1.6897159297723707,
+        0.2910047066413362
+      ],
+      "goal": [
+        -0.3757237095852195,
+        0.7613185910415798
+      ],
+      "obstacles": [
+        {
+          "x": 2.410738511022695,
+          "y": -1.5312533304495894,
+          "radius": 0.17329044843833183,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 0.7277073066472256
+        }
+      ],
+      "room_half": 3.0
+    },
+    {
+      "start": [
+        -1.0500050207326939,
+        2.1568772145012187,
+        -0.8017203043965566
+      ],
+      "goal": [
+        -0.338029498846536,
+        -2.1957824549803555
+      ],
+      "obstacles": [
+        {
+          "x": -1.5682175805460707,
+          "y": -1.8552898180871393,
+          "radius": 0.2543077535872398,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 3.2021613052151325
+        },
+        {
+          "x": -0.6158157249122214,
+          "y": 1.6049505294421038,
+          "radius": 0.1882129351623303,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 2.801207776646897
+        },
+        {
+          "x": 1.0968447856558718,
+          "y": 0.9940793393287659,
+          "radius": 0.210109188667426,
+          "amplitude": 0.0,
+          "period": 12.0,
+          "phase": 3.201562495442072
+        }
+      ],
+      "room_half": 3.0
+    }
+  ],
+  "summary": {
+    "episodes": 10,
+    "success_rate": 1.0,
+    "collision_rate": 0.0,
+    "timeout_rate": 0.0,
+    "mean_success_time": 15.359999999999934,
+    "mean_navigation_time": 15.359999999999934,
+    "mean_path_length": 2.858867851692177,
+    "mean_success_path_length": 2.858867851692177,
+    "mean_return": 23.00385107450659,
+    "mean_success_weighted_directness": 0.9588795305322254
+  },
+  "episodes": [
+    {
+      "scenario_index": 0,
+      "scenario_seed": 519337352895579484,
+      "difficulty": "static_and_moving",
+      "static_count": 2,
+      "moving_count": 2,
+      "outcome": "success",
+      "is_success": true,
+      "goal_distance": 0.19183813050842308,
+      "path_length": 3.3830280568068085,
+      "elapsed_time": 18.20000000000079,
+      "minimum_lidar_range": 0.7717313170433044,
+      "reward_terms": {
+        "progress": 0.2039095806775558,
+        "time": -0.01,
+        "proximity": -0.0,
+        "terminal": 10.0
+      },
+      "return": 25.05772929905566,
+      "success_weighted_directness": 0.9415777631256754
+    },
+    {
+      "scenario_index": 1,
+      "scenario_seed": 540230571295284273,
+      "difficulty": "sparse_static",
+      "static_count": 1,
+      "moving_count": 0,
+      "outcome": "success",
+      "is_success": true,
+      "goal_distance": 0.1925551299875369,
+      "path_length": 2.1499311031883344,
+      "elapsed_time": 11.400000000000476,
+      "minimum_lidar_range": 0.8587557077407837,
+      "reward_terms": {
+        "progress": 0.1967160144443071,
+        "time": -0.01,
+        "proximity": -0.0,
+        "terminal": 10.0
+      },
+      "return": 19.812499674524695,
+      "success_weighted_directness": 0.9623820325330801
+    },
+    {
+      "scenario_index": 2,
+      "scenario_seed": 7750763856324182382,
+      "difficulty": "static_and_moving",
+      "static_count": 3,
+      "moving_count": 1,
+      "outcome": "success",
+      "is_success": true,
+      "goal_distance": 0.18622435375991991,
+      "path_length": 4.985583165567609,
+      "elapsed_time": 27.399999999995693,
+      "minimum_lidar_range": 0.41193193197250366,
+      "reward_terms": {
+        "progress": 0.1339351979091155,
+        "time": -0.01,
+        "proximity": -0.0,
+        "terminal": 10.0
+      },
+      "return": 32.485805887093555,
+      "success_weighted_directness": 0.9542284970863588
+    },
+    {
+      "scenario_index": 3,
+      "scenario_seed": 8724106440322672569,
+      "difficulty": "empty",
+      "static_count": 0,
+      "moving_count": 0,
+      "outcome": "success",
+      "is_success": true,
+      "goal_distance": 0.16403272625918128,
+      "path_length": 2.932486932826285,
+      "elapsed_time": 15.600000000001879,
+      "minimum_lidar_range": 0.6657460331916809,
+      "reward_terms": {
+        "progress": 0.21824482228877506,
+        "time": -0.01,
+        "proximity": -0.0,
+        "terminal": 10.0
+      },
+      "return": 23.46821632081455,
+      "success_weighted_directness": 0.9594845790873872
+    },
+    {
+      "scenario_index": 4,
+      "scenario_seed": 1134355053165122850,
+      "difficulty": "sparse_static",
+      "static_count": 1,
+      "moving_count": 0,
+      "outcome": "success",
+      "is_success": true,
+      "goal_distance": 0.1847629561827269,
+      "path_length": 2.281490420599802,
+      "elapsed_time": 11.600000000000543,
+      "minimum_lidar_range": 1.112046718597412,
+      "reward_terms": {
+        "progress": 0.14790279653090654,
+        "time": -0.01,
+        "proximity": -0.0,
+        "terminal": 10.0
+      },
+      "return": 20.625076886890405,
+      "success_weighted_directness": 0.9755808367477838
+    },
+    {
+      "scenario_index": 5,
+      "scenario_seed": 997250530426154703,
+      "difficulty": "sparse_static",
+      "static_count": 2,
+      "moving_count": 0,
+      "outcome": "success",
+      "is_success": true,
+      "goal_distance": 0.1682964886939058,
+      "path_length": 2.364794091352474,
+      "elapsed_time": 12.40000000000081,
+      "minimum_lidar_range": 1.0010722875595093,
+      "reward_terms": {
+        "progress": 0.2191379913020261,
+        "time": -0.01,
+        "proximity": -0.0,
+        "terminal": 10.0
+      },
+      "return": 20.98435109728155,
+      "success_weighted_directness": 0.9680194637330959
+    },
+    {
+      "scenario_index": 6,
+      "scenario_seed": 2063079001637723828,
+      "difficulty": "dense_static",
+      "static_count": 4,
+      "moving_count": 0,
+      "outcome": "success",
+      "is_success": true,
+      "goal_distance": 0.1985614849003313,
+      "path_length": 1.4174338004020073,
+      "elapsed_time": 7.599999999999385,
+      "minimum_lidar_range": 0.8952234387397766,
+      "reward_terms": {
+        "progress": 0.16909347658513568,
+        "time": -0.01,
+        "proximity": -0.0,
+        "terminal": 10.0
+      },
+      "return": 16.554124694615012,
+      "success_weighted_directness": 0.9773905655632138
+    },
+    {
+      "scenario_index": 7,
+      "scenario_seed": 3647147377885932916,
+      "difficulty": "sparse_static",
+      "static_count": 2,
+      "moving_count": 0,
+      "outcome": "success",
+      "is_success": true,
+      "goal_distance": 0.16968688251305908,
+      "path_length": 2.1717462173001563,
+      "elapsed_time": 12.000000000000677,
+      "minimum_lidar_range": 0.39427247643470764,
+      "reward_terms": {
+        "progress": 0.1588713598733263,
+        "time": -0.01,
+        "proximity": -0.0,
+        "terminal": 10.0
+      },
+      "return": 19.688759773083383,
+      "success_weighted_directness": 0.9335523741121932
+    },
+    {
+      "scenario_index": 8,
+      "scenario_seed": 2123536243108762839,
+      "difficulty": "sparse_static",
+      "static_count": 1,
+      "moving_count": 0,
+      "outcome": "success",
+      "is_success": true,
+      "goal_distance": 0.171887581771442,
+      "path_length": 2.496510669744505,
+      "elapsed_time": 13.800000000001278,
+      "minimum_lidar_range": 1.3022019863128662,
+      "reward_terms": {
+        "progress": 0.1888756603583898,
+        "time": -0.01,
+        "proximity": -0.0,
+        "terminal": 10.0
+      },
+      "return": 21.444908256420938,
+      "success_weighted_directness": 0.9608888366181638
+    },
+    {
+      "scenario_index": 9,
+      "scenario_seed": 6973579339107737559,
+      "difficulty": "dense_static",
+      "static_count": 3,
+      "moving_count": 0,
+      "outcome": "success",
+      "is_success": true,
+      "goal_distance": 0.19105244208768,
+      "path_length": 4.405674059133783,
+      "elapsed_time": 23.5999999999978,
+      "minimum_lidar_range": 0.35525116324424744,
+      "reward_terms": {
+        "progress": 0.22001053068811713,
+        "time": -0.01,
+        "proximity": -0.0,
+        "terminal": 10.0
+      },
+      "return": 29.917038855286144,
+      "success_weighted_directness": 0.9556903567153006
+    }
+  ]
+}

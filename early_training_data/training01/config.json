@@ -1,0 +1,67 @@
+{
+  "schema_version": 2,
+  "training_mode": "mixed_randomized",
+  "algorithms": [
+    "sac",
+    "td3"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "training_steps": 350000,
+  "eval_interval": 2500,
+  "checkpoint_interval": 1250,
+  "max_wall_seconds": 36000,
+  "max_total_steps": 2100000,
+  "keep_periodic_checkpoints": 2,
+  "torch_threads": 1,
+  "validation_episodes": 10,
+  "test_suite": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/scenarios/mixed-test.json",
+  "difficulty_mix": [
+    {
+      "name": "empty",
+      "weight": 0.1,
+      "static_min": 0,
+      "static_max": 0,
+      "moving_min": 0,
+      "moving_max": 0
+    },
+    {
+      "name": "sparse_static",
+      "weight": 0.2,
+      "static_min": 1,
+      "static_max": 2,
+      "moving_min": 0,
+      "moving_max": 0
+    },
+    {
+      "name": "dense_static",
+      "weight": 0.25,
+      "static_min": 3,
+      "static_max": 6,
+      "moving_min": 0,
+      "moving_max": 0
+    },
+    {
+      "name": "static_and_moving",
+      "weight": 0.45,
+      "static_min": 2,
+      "static_max": 6,
+      "moving_min": 1,
+      "moving_max": 2
+    }
+  ],
+  "reward_smoothing_window": 20,
+  "train": {
+    "learning_rate": 0.0003,
+    "buffer_size": 100000,
+    "learning_starts": 2000,
+    "batch_size": 256,
+    "gamma": 0.99,
+    "tau": 0.005,
+    "hidden_size": 128
+  },
+  "label": "mixed_research_proposal"
+}

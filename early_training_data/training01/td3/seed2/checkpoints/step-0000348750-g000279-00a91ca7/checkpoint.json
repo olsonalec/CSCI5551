@@ -1,0 +1,4100 @@
+{
+  "version": 2,
+  "training_mode": "mixed_randomized",
+  "source_sha256": {
+    "__init__.py": "e935961f5045e396e7d2d82035b3f63c7eab44f103f075fafca29ddb8be1cc9b",
+    "__main__.py": "ab6eeb20632c3cc2efa7ac0401c9589eba90f89360891902f8871bd3c6e23c72",
+    "assets/burger.xml": "2f1dd7775f197f7d3b09179eae4ec338be1d7a0bfbaf57b17d4a1a847a512a11",
+    "curriculum.py": "e15394e1825a1587a310e75b0ac846560643cbc777507c08ebb5547927331bf4",
+    "env.py": "7a98043656eac8fabdc6a2356e307c9598827d549ddfd8ed6908719bad001c72",
+    "experiments.py": "6afad919268a26eabd61c49fbb5a1a96a5e766f9bf1f32644242440fbab402c6",
+    "mixed_scenarios.py": "11aaf994628316470f69905f5ec21512fdd1b2a4eafdd8972cdcd896d96b40f7",
+    "pipeline.py": "3279bb75d69b6c18bf5756b03883ad84d018cd0663a90be9af0e6fc994a9a65e",
+    "pipeline_cli.py": "2f91758c439e4b66eb132bbde134345abab82ccd7acbd6592d6590d1bf73bc9b",
+    "pipeline_config.py": "8240c7873e15bf1da69678314aabe417b2888f8e67a95be74eacf49ff6bafbbe",
+    "pipeline_reports.py": "61610b1548eddb091f2362082f91f2f9b869ec39995616507896c97797e4fcb9",
+    "pipeline_state.py": "1f8c8c6ff0c784dc524cbd676bace113d036fbc3fae34a8f1afa8e9d117d763c",
+    "pipeline_tools.py": "341da9d473442a106b8afb16eea59849ee1ba0ba226da969a60f104fb727d53d",
+    "pipeline_tuning.py": "bfbd651633e9c1c1b95eacd596e179b311368250138dd02982a1b6835c6c61d5",
+    "scenarios.py": "ddcb60e944f1ce8b1a8e5b4948876cf2ed71b08f49706da9d89c9f758bdba0a1",
+    "sim.py": "1ba61a746014fa3462c5f2c7f79f316c07a480d29b9968920adef0ca479e8cfe"
+  },
+  "versions": {
+    "mujoco": "3.17.0",
+    "numpy": "2.5.4",
+    "gymnasium": "1.4.0",
+    "stable-baselines3": "2.9.2",
+    "torch": "2.15.0"
+  },
+  "state": {
+    "training_mode": "mixed_randomized",
+    "generation": 279,
+    "next_eval": 350000,
+    "next_checkpoint": 350000,
+    "last_eval": 347500,
+    "best": {
+      "score": [
+        1.0,
+        -0.0,
+        25.923615090835273
+      ],
+      "metrics": {
+        "episodes": 10,
+        "success_rate": 1.0,
+        "collision_rate": 0.0,
+        "timeout_rate": 0.0,
+        "mean_success_time": 19.379999999999164,
+        "mean_navigation_time": 19.379999999999164,
+        "mean_path_length": 3.484227854982673,
+        "mean_success_path_length": 3.484227854982673,
+        "mean_return": 25.923615090835273,
+        "mean_success_weighted_directness": 0.9638836888268842
+      },
+      "checkpoint": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/checkpoints/step-0000330000-g000264-c8ada291"
+    },
+    "evaluations": [
+      {
+        "steps": 2500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.2,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.8,
+          "mean_success_time": 11.400000000000476,
+          "mean_navigation_time": 98.27999999992149,
+          "mean_path_length": 7.829676539214451,
+          "mean_success_path_length": 2.0083524988732604,
+          "mean_return": 5.34903209315916,
+          "mean_success_weighted_directness": 0.17832760986307877
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000002500-g000002.json",
+        "scenario_seeds": [
+          4522803404100028259,
+          2223767210619983420,
+          8082752034923691637,
+          3360933391835961164,
+          1866282190279686329,
+          1352057503833406341,
+          2338406035480529660,
+          8260709829650256358,
+          5509497681204362907,
+          7076122484085751663
+        ],
+        "wall_seconds": 15516.67855712492
+      },
+      {
+        "steps": 5000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.1,
+          "mean_success_time": 32.711111111114555,
+          "mean_navigation_time": 41.439999999993276,
+          "mean_path_length": 5.767391729314258,
+          "mean_success_path_length": 4.975709625820241,
+          "mean_return": 21.908564927617974,
+          "mean_success_weighted_directness": 0.6285076418435411
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000005000-g000004.json",
+        "scenario_seeds": [
+          7824105199980359813,
+          8637500700352157679,
+          8434602579756216717,
+          2936820731027977479,
+          2839481864337405076,
+          3401784381113837122,
+          1284875560593899935,
+          232942754652606683,
+          3056310798951302532,
+          5110395215802265928
+        ],
+        "wall_seconds": 15543.238213541918
+      },
+      {
+        "steps": 7500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.7,
+          "collision_rate": 0.2,
+          "timeout_rate": 0.1,
+          "mean_success_time": 15.028571428570784,
+          "mean_navigation_time": 24.079999999989628,
+          "mean_path_length": 3.3109248944564826,
+          "mean_success_path_length": 2.449207231090916,
+          "mean_return": 11.931123528446973,
+          "mean_success_weighted_directness": 0.5941672098357481
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000007500-g000006.json",
+        "scenario_seeds": [
+          888851687451809051,
+          1417093740132831830,
+          7174564673499911284,
+          7787767497462443678,
+          9007132260159018335,
+          7181830187803550097,
+          6674852133483324203,
+          8795455605501388796,
+          4228647119697291605,
+          4303815191825001058
+        ],
+        "wall_seconds": 15566.759209333919
+      },
+      {
+        "steps": 10000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.8,
+          "collision_rate": 0.2,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.400000000000833,
+          "mean_navigation_time": 24.859999999991118,
+          "mean_path_length": 3.494180167202489,
+          "mean_success_path_length": 2.3588865997065467,
+          "mean_return": 15.27094219170228,
+          "mean_success_weighted_directness": 0.7257437107846707
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000010000-g000008.json",
+        "scenario_seeds": [
+          2696136432535673675,
+          5813421048222775739,
+          2476093932136112295,
+          2427919932828935109,
+          1446654964667267350,
+          8656671779697568227,
+          9222092464632531806,
+          887312940122517998,
+          7818788308135406439,
+          2256510614309464784
+        ],
+        "wall_seconds": 15590.4294025423
+      },
+      {
+        "steps": 12500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.7,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.2,
+          "mean_success_time": 15.571428571428385,
+          "mean_navigation_time": 35.999999999980254,
+          "mean_path_length": 4.413998764609467,
+          "mean_success_path_length": 2.4940816860765542,
+          "mean_return": 11.26151179684463,
+          "mean_success_weighted_directness": 0.5977438205645084
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000012500-g000010.json",
+        "scenario_seeds": [
+          3454408398796698819,
+          4448839130815487104,
+          8814233122654266166,
+          7855475032557799496,
+          5782912555009245035,
+          8458500563422524090,
+          1586225467145862642,
+          176976682949750816,
+          5892900192902191225,
+          6352934749478395193
+        ],
+        "wall_seconds": 15617.040496625006
+      },
+      {
+        "steps": 15000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.4,
+          "collision_rate": 0.4,
+          "timeout_rate": 0.2,
+          "mean_success_time": 22.499999999999474,
+          "mean_navigation_time": 36.13999999998017,
+          "mean_path_length": 4.389682920253523,
+          "mean_success_path_length": 3.7958613686854124,
+          "mean_return": 6.421593063528029,
+          "mean_success_weighted_directness": 0.36721178732727233
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000015000-g000012.json",
+        "scenario_seeds": [
+          2356035870440372645,
+          7591909070074712145,
+          7363350012493041424,
+          2223189634740608431,
+          3297508125979480356,
+          3514724961893734240,
+          5346516717970648151,
+          1753223036421810000,
+          3956491258962089771,
+          2281488404984507407
+        ],
+        "wall_seconds": 15645.107180291787
+      },
+      {
+        "steps": 17500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 24.75555555555115,
+          "mean_navigation_time": 24.759999999995753,
+          "mean_path_length": 3.449786536724214,
+          "mean_success_path_length": 3.4015421015049356,
+          "mean_return": 20.66623179633323,
+          "mean_success_weighted_directness": 0.7638495514847908
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000017500-g000014.json",
+        "scenario_seeds": [
+          7174117591686172123,
+          6598371671706343997,
+          6845083335361376456,
+          6054618732785365501,
+          2740494827013847651,
+          39054325119302105,
+          2185541622390812975,
+          8629729850115100942,
+          6816552253636809228,
+          5541069161870397366
+        ],
+        "wall_seconds": 15670.120158124715
+      },
+      {
+        "steps": 20000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.7,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.2,
+          "mean_success_time": 21.514285714287208,
+          "mean_navigation_time": 39.579999999981354,
+          "mean_path_length": 4.857523942681917,
+          "mean_success_path_length": 3.3203733182198,
+          "mean_return": 15.072540486976578,
+          "mean_success_weighted_directness": 0.5890913219801991
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000020000-g000016.json",
+        "scenario_seeds": [
+          6402713833545731231,
+          8103376378436926530,
+          2223909382647949752,
+          3028653306488180368,
+          5028221868831821068,
+          2296574506931015037,
+          5437209124715469889,
+          349222017062620791,
+          5821044450974127461,
+          4238032822920568772
+        ],
+        "wall_seconds": 15697.936114083976
+      },
+      {
+        "steps": 22500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.500000000001656,
+          "mean_navigation_time": 18.500000000001656,
+          "mean_path_length": 3.0647109475188534,
+          "mean_success_path_length": 3.0647109475188534,
+          "mean_return": 22.685077552964323,
+          "mean_success_weighted_directness": 0.9215815807247667
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000022500-g000018.json",
+        "scenario_seeds": [
+          4661625891176366984,
+          351176748625404397,
+          8406188597195558337,
+          8853526085583613809,
+          1133814332072520770,
+          668215198925467706,
+          963866723153042922,
+          6372190066424874948,
+          1216525063441126216,
+          4008433458076221583
+        ],
+        "wall_seconds": 15721.458652917296
+      },
+      {
+        "steps": 25000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 13.933333333333511,
+          "mean_navigation_time": 13.48000000000014,
+          "mean_path_length": 2.3771577143459552,
+          "mean_success_path_length": 2.4931228236786707,
+          "mean_return": 18.487312409033095,
+          "mean_success_weighted_directness": 0.8520842673135745
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000025000-g000020.json",
+        "scenario_seeds": [
+          931561495615115099,
+          3682134682762785646,
+          6884039810278111221,
+          1224838462108851607,
+          3155957549312943169,
+          2775845528996678328,
+          1573279945204946116,
+          1439830805964750491,
+          6252495845866369196,
+          636515151562446763
+        ],
+        "wall_seconds": 15747.949489084072
+      },
+      {
+        "steps": 27500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.8,
+          "collision_rate": 0.2,
+          "timeout_rate": 0.0,
+          "mean_success_time": 28.499999999991644,
+          "mean_navigation_time": 25.019999999993384,
+          "mean_path_length": 3.5375651638458514,
+          "mean_success_path_length": 4.041556692474174,
+          "mean_return": 16.693595071642473,
+          "mean_success_weighted_directness": 0.6785935762669005
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000027500-g000022.json",
+        "scenario_seeds": [
+          1789388940457485844,
+          2145495761650030129,
+          5000158848930319723,
+          649860766294645176,
+          6236456216551948680,
+          4565422156528396744,
+          6874215418619391460,
+          5248250553621932591,
+          8074616483695943366,
+          1767903168315973994
+        ],
+        "wall_seconds": 15774.328169999644
+      },
+      {
+        "steps": 30000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 22.559999999998254,
+          "mean_navigation_time": 22.559999999998254,
+          "mean_path_length": 3.724194115296082,
+          "mean_success_path_length": 3.724194115296082,
+          "mean_return": 25.41967226841281,
+          "mean_success_weighted_directness": 0.8857012088721634
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000030000-g000024.json",
+        "scenario_seeds": [
+          4720103341508943077,
+          7192867630987047283,
+          5189644225563336937,
+          6752340474097162645,
+          1703000854879670579,
+          5367082249839579698,
+          4414098902721933945,
+          5962380975000055732,
+          7670359077869843376,
+          2848534704771542648
+        ],
+        "wall_seconds": 15798.499628375284
+      },
+      {
+        "steps": 32500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.1,
+          "mean_success_time": 16.62222222222253,
+          "mean_navigation_time": 26.959999999990448,
+          "mean_path_length": 3.795825459713754,
+          "mean_success_path_length": 2.7276549423891208,
+          "mean_return": 18.663477477572524,
+          "mean_success_weighted_directness": 0.7961572415742673
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000032500-g000026.json",
+        "scenario_seeds": [
+          8473009727705316693,
+          2428648756651492828,
+          1707859768049631935,
+          3302222652359028030,
+          7941399632047710464,
+          6929525650027973151,
+          1680972153150658398,
+          5645916232758925072,
+          7789516138057535148,
+          8749523476614735071
+        ],
+        "wall_seconds": 15822.978773292154
+      },
+      {
+        "steps": 35000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.680000000000556,
+          "mean_navigation_time": 15.680000000000556,
+          "mean_path_length": 2.7856918010291087,
+          "mean_success_path_length": 2.7856918010291087,
+          "mean_return": 22.501042392916496,
+          "mean_success_weighted_directness": 0.9454177643598746
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000035000-g000028.json",
+        "scenario_seeds": [
+          416900795731438479,
+          8018862779453976028,
+          617793476063645036,
+          4558325955865805088,
+          5699328138879211807,
+          5548170250235574588,
+          4998536501126795304,
+          9087022539907971290,
+          2611442752007714614,
+          654282195658550191
+        ],
+        "wall_seconds": 15843.844632834196
+      },
+      {
+        "steps": 37500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.1,
+          "mean_success_time": 19.888888888888033,
+          "mean_navigation_time": 29.899999999989404,
+          "mean_path_length": 4.108111655414847,
+          "mean_success_path_length": 3.379700080849597,
+          "mean_return": 22.591838566444967,
+          "mean_success_weighted_directness": 0.8469210358001072
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000037500-g000030.json",
+        "scenario_seeds": [
+          3174187199357157275,
+          9220537632499672083,
+          3051654796555041110,
+          4703624389464792493,
+          820843987473464654,
+          330572171281726205,
+          1288125150445955599,
+          4346737655720091656,
+          4600111868069095025,
+          5367570686246699684
+        ],
+        "wall_seconds": 15867.265163583681
+      },
+      {
+        "steps": 40000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.820000000000004,
+          "mean_navigation_time": 18.820000000000004,
+          "mean_path_length": 3.2809459587191485,
+          "mean_success_path_length": 3.2809459587191485,
+          "mean_return": 24.636651715814217,
+          "mean_success_weighted_directness": 0.946035536306631
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000040000-g000032.json",
+        "scenario_seeds": [
+          3343811405405227497,
+          7854820423287447843,
+          3765509325223624774,
+          5042059744910105825,
+          2837392427290364289,
+          7298582204075825380,
+          4027698959313644306,
+          1239672545161704029,
+          6455578271459373992,
+          6536906714249734122
+        ],
+        "wall_seconds": 15888.293589374982
+      },
+      {
+        "steps": 42500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 13.86000000000007,
+          "mean_navigation_time": 13.86000000000007,
+          "mean_path_length": 2.3918684939068697,
+          "mean_success_path_length": 2.3918684939068697,
+          "mean_return": 20.377330631515512,
+          "mean_success_weighted_directness": 0.9325065244245708
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000042500-g000034.json",
+        "scenario_seeds": [
+          6228587071407635326,
+          4387482693289526851,
+          768584808454028348,
+          1588104044874428184,
+          1374146399896938493,
+          7279419290555470139,
+          728016239419334414,
+          6349137700467142707,
+          3882488873562267429,
+          8630894722954754383
+        ],
+        "wall_seconds": 15909.157638625242
+      },
+      {
+        "steps": 45000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.119999999999255,
+          "mean_navigation_time": 18.119999999999255,
+          "mean_path_length": 3.1139818967034465,
+          "mean_success_path_length": 3.1139818967034465,
+          "mean_return": 23.654749157934905,
+          "mean_success_weighted_directness": 0.9353085234133435
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000045000-g000036.json",
+        "scenario_seeds": [
+          9041585589182620337,
+          6543728263351689080,
+          3207323753350666261,
+          9130431622266867305,
+          5099442824768475519,
+          2687369209669192126,
+          6859895183498099199,
+          8789791629179260166,
+          1125233598278086166,
+          4730307738914653068
+        ],
+        "wall_seconds": 15929.964117583819
+      },
+      {
+        "steps": 47500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.8,
+          "collision_rate": 0.2,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.999999999999392,
+          "mean_navigation_time": 18.0399999999998,
+          "mean_path_length": 3.0680811198567026,
+          "mean_success_path_length": 3.3017431533493777,
+          "mean_return": 19.055660488946028,
+          "mean_success_weighted_directness": 0.7282886724957278
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000047500-g000038.json",
+        "scenario_seeds": [
+          1238248439423554606,
+          5083043289224948864,
+          6273526211847327277,
+          4785211972121192746,
+          5508794484891474430,
+          1791229737690267189,
+          732606034835905555,
+          2187540684640113477,
+          9092475288073175679,
+          7061478657960279935
+        ],
+        "wall_seconds": 15950.867494291626
+      },
+      {
+        "steps": 50000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 20.4000000000011,
+          "mean_navigation_time": 20.4000000000011,
+          "mean_path_length": 3.3324224730887115,
+          "mean_success_path_length": 3.3324224730887115,
+          "mean_return": 22.927142596287574,
+          "mean_success_weighted_directness": 0.8776532862712708
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000050000-g000040.json",
+        "scenario_seeds": [
+          7297188539557938323,
+          5433563065977462398,
+          3617677066018578927,
+          6792294601232311382,
+          7898086389044383192,
+          897666549645692770,
+          7839905999789698996,
+          3509700846384355110,
+          8600823797298511544,
+          12718795855793787
+        ],
+        "wall_seconds": 15971.984988749959
+      },
+      {
+        "steps": 52500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.1,
+          "mean_success_time": 22.933333333332037,
+          "mean_navigation_time": 32.639999999989,
+          "mean_path_length": 4.6882328979493,
+          "mean_success_path_length": 3.859755423826831,
+          "mean_return": 22.445562534665807,
+          "mean_success_weighted_directness": 0.7639107989139948
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000052500-g000042.json",
+        "scenario_seeds": [
+          5063400967030423934,
+          7869981610740581062,
+          74751759598844461,
+          8986659116094534050,
+          8780122551299365188,
+          5541065602448040822,
+          819014012467823740,
+          5231368680335958408,
+          1919049042159735744,
+          3740393967091364293
+        ],
+        "wall_seconds": 15995.803060334176
+      },
+      {
+        "steps": 55000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.420000000000172,
+          "mean_navigation_time": 18.420000000000172,
+          "mean_path_length": 3.0704527302515303,
+          "mean_success_path_length": 3.0704527302515303,
+          "mean_return": 21.89281765023395,
+          "mean_success_weighted_directness": 0.8665515079033257
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000055000-g000044.json",
+        "scenario_seeds": [
+          4327915756476093477,
+          6589269685310797020,
+          9194666064157971477,
+          2572204385394929402,
+          6204984903588216118,
+          6348231841572773946,
+          1147989189344720156,
+          5704113145839036669,
+          8699694796663385846,
+          6561895353239141916
+        ],
+        "wall_seconds": 16017.826837209053
+      },
+      {
+        "steps": 57500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.46000000000246,
+          "mean_navigation_time": 18.46000000000246,
+          "mean_path_length": 3.1480871617606017,
+          "mean_success_path_length": 3.1480871617606017,
+          "mean_return": 22.64971731457906,
+          "mean_success_weighted_directness": 0.9072363439390312
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000057500-g000046.json",
+        "scenario_seeds": [
+          8318184222388302760,
+          7099123763729669675,
+          1306640421450513640,
+          5381575995362662269,
+          3183629377609836225,
+          8615786077673623749,
+          3590094138418519490,
+          6791269646625210556,
+          7242608457574430685,
+          6159276093337050590
+        ],
+        "wall_seconds": 16039.247278584167
+      },
+      {
+        "steps": 60000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.24000000000062,
+          "mean_navigation_time": 16.24000000000062,
+          "mean_path_length": 2.8985690147977228,
+          "mean_success_path_length": 2.8985690147977228,
+          "mean_return": 22.509858713991296,
+          "mean_success_weighted_directness": 0.9191333459402434
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000060000-g000048.json",
+        "scenario_seeds": [
+          6070529887240744000,
+          3270343226475642814,
+          8068708328112110099,
+          4896898780616189625,
+          5574897991806225021,
+          5993062272323390941,
+          1799985903337640728,
+          5819309883610578588,
+          6020958849882792023,
+          8869410059925477303
+        ],
+        "wall_seconds": 16061.22769041732
+      },
+      {
+        "steps": 62500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.399999999999437,
+          "mean_navigation_time": 17.619999999999497,
+          "mean_path_length": 2.8727827892967355,
+          "mean_success_path_length": 2.9161094879551572,
+          "mean_return": 19.48603590480543,
+          "mean_success_weighted_directness": 0.8019511629940499
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000062500-g000050.json",
+        "scenario_seeds": [
+          4545857689024271292,
+          4528964203280500580,
+          4725243852599372552,
+          2144344637739231068,
+          1249427472997707242,
+          4075155934256829806,
+          482317283955414469,
+          7016132928467077107,
+          7733737633778139675,
+          5950741645515813747
+        ],
+        "wall_seconds": 16083.177712124772
+      },
+      {
+        "steps": 65000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.77777777777766,
+          "mean_navigation_time": 15.839999999999836,
+          "mean_path_length": 2.7994640599364486,
+          "mean_success_path_length": 3.004288964147719,
+          "mean_return": 19.97028887693221,
+          "mean_success_weighted_directness": 0.8159172107283496
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000065000-g000052.json",
+        "scenario_seeds": [
+          4164040649670881442,
+          8725556109443136080,
+          7317401518977945640,
+          7417546244722652696,
+          2996677705149727100,
+          3138042395254078712,
+          5103264513042694022,
+          7830405191918404516,
+          302827933697042347,
+          7779833719152101216
+        ],
+        "wall_seconds": 16105.37432650011
+      },
+      {
+        "steps": 67500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 21.420000000001956,
+          "mean_navigation_time": 21.420000000001956,
+          "mean_path_length": 3.6276515803639144,
+          "mean_success_path_length": 3.6276515803639144,
+          "mean_return": 24.937924867678962,
+          "mean_success_weighted_directness": 0.9113749127841737
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000067500-g000054.json",
+        "scenario_seeds": [
+          4222876490148948172,
+          6360571343642403237,
+          2459382526731038709,
+          5877652961392456285,
+          7778687278404293423,
+          2658316382772898670,
+          5332246401563649191,
+          4907286957966025911,
+          6782842418672941325,
+          571370609736924198
+        ],
+        "wall_seconds": 16127.651874166913
+      },
+      {
+        "steps": 70000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.920000000000517,
+          "mean_navigation_time": 14.920000000000517,
+          "mean_path_length": 2.6186416998354294,
+          "mean_success_path_length": 2.6186416998354294,
+          "mean_return": 21.630396178308462,
+          "mean_success_weighted_directness": 0.9389685365182693
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000070000-g000056.json",
+        "scenario_seeds": [
+          7585757115696269611,
+          6047025129082885113,
+          9223272835781499293,
+          8271531361678838209,
+          7365367904515795417,
+          1419092927220018632,
+          8605420812864717781,
+          2801087607437463944,
+          2392437414055856509,
+          1525283717021379272
+        ],
+        "wall_seconds": 16148.869090833701
+      },
+      {
+        "steps": 72500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.639999999998775,
+          "mean_navigation_time": 17.639999999998775,
+          "mean_path_length": 3.1722012486189297,
+          "mean_success_path_length": 3.1722012486189297,
+          "mean_return": 24.375234578658215,
+          "mean_success_weighted_directness": 0.9549316320634678
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000072500-g000058.json",
+        "scenario_seeds": [
+          293727840298798067,
+          6111263071637659295,
+          6085233431129214394,
+          7787172039504804955,
+          1080933200158634008,
+          7147331064083973029,
+          1266908689107938162,
+          4402226654708366449,
+          4346621407906821926,
+          1014762371383907262
+        ],
+        "wall_seconds": 16170.484262624756
+      },
+      {
+        "steps": 75000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 26.699999999991554,
+          "mean_navigation_time": 26.699999999991554,
+          "mean_path_length": 3.985383645384651,
+          "mean_success_path_length": 3.985383645384651,
+          "mean_return": 22.096833423089144,
+          "mean_success_weighted_directness": 0.827374474008343
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000075000-g000060.json",
+        "scenario_seeds": [
+          8935577066626042697,
+          241695496990791872,
+          4329041858676508547,
+          6761299191245813742,
+          6537297689119803029,
+          3265591556691796612,
+          3387542126500612208,
+          1670595072043718232,
+          5903639278609480824,
+          51641625984625216
+        ],
+        "wall_seconds": 16194.347105791792
+      },
+      {
+        "steps": 77500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.33999999999921,
+          "mean_navigation_time": 16.33999999999921,
+          "mean_path_length": 2.925799465727365,
+          "mean_success_path_length": 2.925799465727365,
+          "mean_return": 23.103843191213766,
+          "mean_success_weighted_directness": 0.9472066875150429
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000077500-g000062.json",
+        "scenario_seeds": [
+          2424361826242270818,
+          8512651862325248980,
+          6563509580475149712,
+          5229464460934812201,
+          6815491975359453963,
+          4377288328133656553,
+          5628572278265844,
+          4345549330841856234,
+          965186699030912506,
+          1305851977761643361
+        ],
+        "wall_seconds": 16216.238861625083
+      },
+      {
+        "steps": 80000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 13.700000000000179,
+          "mean_navigation_time": 13.700000000000179,
+          "mean_path_length": 2.4237068945963087,
+          "mean_success_path_length": 2.4237068945963087,
+          "mean_return": 20.759779103864265,
+          "mean_success_weighted_directness": 0.9409067438606401
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000080000-g000064.json",
+        "scenario_seeds": [
+          1370321256334514832,
+          8388002749230439172,
+          1672264340541534470,
+          4394030686542069313,
+          1516911887342284018,
+          1303302191394918294,
+          153518743400663768,
+          140593250778268556,
+          6696265461000529832,
+          6511481962182579746
+        ],
+        "wall_seconds": 16236.720299334265
+      },
+      {
+        "steps": 82500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 20.079999999999128,
+          "mean_navigation_time": 20.079999999999128,
+          "mean_path_length": 3.5224109801935106,
+          "mean_success_path_length": 3.5224109801935106,
+          "mean_return": 25.560867293351855,
+          "mean_success_weighted_directness": 0.9309033430207385
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000082500-g000066.json",
+        "scenario_seeds": [
+          9116378812411954499,
+          7682531390306712404,
+          4337528038657169529,
+          7655747892463425403,
+          8032740681101270908,
+          3876259170338227592,
+          8175893854832358377,
+          1842449333198409741,
+          3512303241617642624,
+          6366882343176147740
+        ],
+        "wall_seconds": 16259.268681959249
+      },
+      {
+        "steps": 85000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.879999999999583,
+          "mean_navigation_time": 17.879999999999583,
+          "mean_path_length": 2.978103206049201,
+          "mean_success_path_length": 2.978103206049201,
+          "mean_return": 22.319502370689413,
+          "mean_success_weighted_directness": 0.8957106222836406
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000085000-g000068.json",
+        "scenario_seeds": [
+          8176976793207854220,
+          3731003502842866979,
+          3567818681374784793,
+          2484593374726633239,
+          3718747440376081617,
+          49173658270554352,
+          8268097187890329100,
+          7337496417476875727,
+          2127807034973076078,
+          6834121650156434950
+        ],
+        "wall_seconds": 16280.940571541898
+      },
+      {
+        "steps": 87500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.63999999999943,
+          "mean_navigation_time": 16.63999999999943,
+          "mean_path_length": 2.940897121363831,
+          "mean_success_path_length": 2.940897121363831,
+          "mean_return": 23.387248106407704,
+          "mean_success_weighted_directness": 0.953397014444423
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000087500-g000070.json",
+        "scenario_seeds": [
+          3802611301042765518,
+          1655591044334244221,
+          7987503235692580232,
+          4551588814497035083,
+          7277556086721237658,
+          1409740316719312425,
+          6508488993231167371,
+          2168241993940892203,
+          3445550239623263788,
+          871690139897487171
+        ],
+        "wall_seconds": 16302.05394366663
+      },
+      {
+        "steps": 90000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.919999999999366,
+          "mean_navigation_time": 15.919999999999366,
+          "mean_path_length": 2.805453048806554,
+          "mean_success_path_length": 2.805453048806554,
+          "mean_return": 22.75034502826881,
+          "mean_success_weighted_directness": 0.9611793649119192
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000090000-g000072.json",
+        "scenario_seeds": [
+          4359270503822731349,
+          3369992840538507565,
+          4895368016840673833,
+          3447111478379175924,
+          8653840273047656219,
+          5773634511883764723,
+          8339810249744875636,
+          5519823830174704839,
+          1284611137105254670,
+          3788560406758454518
+        ],
+        "wall_seconds": 16323.412734083831
+      },
+      {
+        "steps": 92500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 19.25999999999905,
+          "mean_navigation_time": 19.25999999999905,
+          "mean_path_length": 3.4451729302076552,
+          "mean_success_path_length": 3.4451729302076552,
+          "mean_return": 25.37052857183313,
+          "mean_success_weighted_directness": 0.9504584150578903
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000092500-g000074.json",
+        "scenario_seeds": [
+          6541794920556030784,
+          2921180618476132735,
+          2449028621837858999,
+          6730804035246245808,
+          4094326161747726235,
+          3880896597599109906,
+          6021668619944170318,
+          8614640393054666537,
+          2866643171169137100,
+          7095249953466958223
+        ],
+        "wall_seconds": 16345.81573279202
+      },
+      {
+        "steps": 95000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.819999999999208,
+          "mean_navigation_time": 17.819999999999208,
+          "mean_path_length": 3.130689456529245,
+          "mean_success_path_length": 3.130689456529245,
+          "mean_return": 23.6311558671245,
+          "mean_success_weighted_directness": 0.9290902043232849
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000095000-g000076.json",
+        "scenario_seeds": [
+          1542592090263642903,
+          1681139201674036504,
+          4566334064001115015,
+          4252787158621784520,
+          2279226118903544887,
+          6269745439193553250,
+          4096234791474021840,
+          1154179785035783874,
+          2573544878739734208,
+          2951134831228882616
+        ],
+        "wall_seconds": 16367.344464042224
+      },
+      {
+        "steps": 97500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.540000000000223,
+          "mean_navigation_time": 15.540000000000223,
+          "mean_path_length": 2.748279080189058,
+          "mean_success_path_length": 2.748279080189058,
+          "mean_return": 22.189733545084316,
+          "mean_success_weighted_directness": 0.9432885140458088
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000097500-g000078.json",
+        "scenario_seeds": [
+          9217552055815755448,
+          6523172978576855034,
+          7454189358670971513,
+          4419923984915723600,
+          6804882914351396877,
+          8947879614494538735,
+          1534535720037106341,
+          8234951185674929216,
+          7592638984459693321,
+          7150180766036123538
+        ],
+        "wall_seconds": 16388.86551179178
+      },
+      {
+        "steps": 100000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.31999999999936,
+          "mean_navigation_time": 18.31999999999936,
+          "mean_path_length": 3.154995962100577,
+          "mean_success_path_length": 3.154995962100577,
+          "mean_return": 23.797994690229405,
+          "mean_success_weighted_directness": 0.9277507767419747
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000100000-g000080.json",
+        "scenario_seeds": [
+          6066548717983820328,
+          1051293929526476936,
+          4655495285459226574,
+          8964958081818621238,
+          7111848128685870574,
+          7701308524537641489,
+          6348717899225583228,
+          6305405455802063194,
+          4793079012099375675,
+          7163489964193283219
+        ],
+        "wall_seconds": 16410.61289525032
+      },
+      {
+        "steps": 102500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.019999999999598,
+          "mean_navigation_time": 15.019999999999598,
+          "mean_path_length": 2.7269761645733066,
+          "mean_success_path_length": 2.7269761645733066,
+          "mean_return": 22.05323021880439,
+          "mean_success_weighted_directness": 0.9326648130098368
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000102500-g000082.json",
+        "scenario_seeds": [
+          7897149592377367148,
+          2393594605624879919,
+          5469773145232975368,
+          6993754116421571201,
+          7506104409416678040,
+          8469339337517907998,
+          7218894402211542251,
+          2362964761142724315,
+          1258141109595174789,
+          135439668905747138
+        ],
+        "wall_seconds": 16431.162455542013
+      },
+      {
+        "steps": 105000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.577777777778131,
+          "mean_navigation_time": 15.120000000000351,
+          "mean_path_length": 2.7166800630994663,
+          "mean_success_path_length": 2.8208385627521686,
+          "mean_return": 20.150516883970568,
+          "mean_success_weighted_directness": 0.8430526060940101
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000105000-g000084.json",
+        "scenario_seeds": [
+          3527311342059781929,
+          9221430296261603770,
+          3175299120172535094,
+          7587399593984645672,
+          4522945279159127764,
+          3313847197797861417,
+          1522934568225124220,
+          3269664905150042946,
+          1665017289420775470,
+          3681117498586869876
+        ],
+        "wall_seconds": 16451.854047625326
+      },
+      {
+        "steps": 107500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.079999999999764,
+          "mean_navigation_time": 16.079999999999764,
+          "mean_path_length": 2.8345325192336412,
+          "mean_success_path_length": 2.8345325192336412,
+          "mean_return": 22.546788064552658,
+          "mean_success_weighted_directness": 0.9381654171050972
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000107500-g000086.json",
+        "scenario_seeds": [
+          1122316961666679509,
+          8376649519011274606,
+          961797883479870107,
+          5852564513584692715,
+          7468270030356797189,
+          6419313193569723533,
+          2236122376765350408,
+          5082841804380587881,
+          6080632686628698719,
+          1009002359748980071
+        ],
+        "wall_seconds": 16472.784148667008
+      },
+      {
+        "steps": 110000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 19.759999999998772,
+          "mean_navigation_time": 19.759999999998772,
+          "mean_path_length": 3.586837824123747,
+          "mean_success_path_length": 3.586837824123747,
+          "mean_return": 25.90135310030056,
+          "mean_success_weighted_directness": 0.9414720920983065
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000110000-g000088.json",
+        "scenario_seeds": [
+          6632380112110581777,
+          4740714357853030761,
+          4937532661352277526,
+          7870343055686164778,
+          5888987001613353289,
+          264441318100668697,
+          1854271212643346557,
+          7947136669860574163,
+          5776294422137884201,
+          8882783677364865891
+        ],
+        "wall_seconds": 16494.100249583833
+      },
+      {
+        "steps": 112500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.9199999999996,
+          "mean_navigation_time": 16.9199999999996,
+          "mean_path_length": 3.0430180055191753,
+          "mean_success_path_length": 3.0430180055191753,
+          "mean_return": 23.63166382488381,
+          "mean_success_weighted_directness": 0.9482313231889687
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000112500-g000090.json",
+        "scenario_seeds": [
+          4897167618635791187,
+          5232095254444354613,
+          6613534631258983100,
+          3749184291268868611,
+          6575429136285492538,
+          5652652931522105660,
+          8557551491549604283,
+          6018364337649218031,
+          889315257780751610,
+          586333179650488423
+        ],
+        "wall_seconds": 16514.701940124854
+      },
+      {
+        "steps": 115000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.777777777777958,
+          "mean_navigation_time": 15.48000000000026,
+          "mean_path_length": 2.786897227696827,
+          "mean_success_path_length": 2.8508223808381583,
+          "mean_return": 20.436184336259593,
+          "mean_success_weighted_directness": 0.8488512405864352
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000115000-g000092.json",
+        "scenario_seeds": [
+          6681778626348770985,
+          4443973084814255473,
+          8388408458368663998,
+          825493534484344149,
+          2915579082543333792,
+          8847170788036642111,
+          8100365025388387475,
+          4637954744343049307,
+          9154183253984806554,
+          4414316628827312711
+        ],
+        "wall_seconds": 16535.018405541778
+      },
+      {
+        "steps": 117500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 13.359999999999939,
+          "mean_navigation_time": 13.359999999999939,
+          "mean_path_length": 2.4194184855273484,
+          "mean_success_path_length": 2.4194184855273484,
+          "mean_return": 20.83465639760282,
+          "mean_success_weighted_directness": 0.9460896658919872
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000117500-g000094.json",
+        "scenario_seeds": [
+          7251137870179491933,
+          6050298048435610207,
+          427761116753234317,
+          1120693636909410392,
+          7363688282096950877,
+          255444685135913287,
+          5607019993616242502,
+          821043937010231234,
+          1339834837633239579,
+          5932467611270374043
+        ],
+        "wall_seconds": 16555.431050917134
+      },
+      {
+        "steps": 120000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.979999999999514,
+          "mean_navigation_time": 17.979999999999514,
+          "mean_path_length": 3.3112877815068096,
+          "mean_success_path_length": 3.3112877815068096,
+          "mean_return": 24.75695873563833,
+          "mean_success_weighted_directness": 0.9402542348064493
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000120000-g000096.json",
+        "scenario_seeds": [
+          4076468713925825097,
+          2662830533839022158,
+          1758099781048832252,
+          9095578169301365445,
+          8814293447847887318,
+          2086653293338293112,
+          5745823978148017080,
+          1478303925856286360,
+          6154113728400490129,
+          624015321460216034
+        ],
+        "wall_seconds": 16576.85342912469
+      },
+      {
+        "steps": 122500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.759999999999692,
+          "mean_navigation_time": 15.759999999999692,
+          "mean_path_length": 2.888146622266798,
+          "mean_success_path_length": 2.888146622266798,
+          "mean_return": 22.895652729224093,
+          "mean_success_weighted_directness": 0.9478209421708212
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000122500-g000098.json",
+        "scenario_seeds": [
+          3754648905221066697,
+          2123875988913158883,
+          448526581193009660,
+          8650109525671237266,
+          117306873993911357,
+          4360901278324022845,
+          3093897748544143568,
+          4449799127506377163,
+          1413602809359756040,
+          1061652537748490530
+        ],
+        "wall_seconds": 16597.762734958902
+      },
+      {
+        "steps": 125000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.759999999999316,
+          "mean_navigation_time": 16.759999999999316,
+          "mean_path_length": 3.0218429713238515,
+          "mean_success_path_length": 3.0218429713238515,
+          "mean_return": 23.732052493081564,
+          "mean_success_weighted_directness": 0.962915088185283
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000125000-g000100.json",
+        "scenario_seeds": [
+          7028357918957069030,
+          8477305134796363666,
+          1700008413104309518,
+          6118004496627289159,
+          4070600870602583777,
+          3076956833489967939,
+          6211186230067553156,
+          3856959704499218475,
+          9013288562814187408,
+          6680443578744210340
+        ],
+        "wall_seconds": 16618.523462958634
+      },
+      {
+        "steps": 127500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.600000000000346,
+          "mean_navigation_time": 16.600000000000346,
+          "mean_path_length": 3.032070662172847,
+          "mean_success_path_length": 3.032070662172847,
+          "mean_return": 23.832166208749328,
+          "mean_success_weighted_directness": 0.9644376144736908
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000127500-g000102.json",
+        "scenario_seeds": [
+          8137384757984634881,
+          8621541839684157347,
+          1587931285953020197,
+          3116609570829100356,
+          49241949232471450,
+          3136906483489803437,
+          1536736909776696716,
+          5378493938535004854,
+          7529332617476039746,
+          2093979514776622445
+        ],
+        "wall_seconds": 16640.391308167018
+      },
+      {
+        "steps": 130000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.99999999999963,
+          "mean_navigation_time": 15.99999999999963,
+          "mean_path_length": 2.9441803965380973,
+          "mean_success_path_length": 2.9441803965380973,
+          "mean_return": 23.46440537085279,
+          "mean_success_weighted_directness": 0.9646071159856348
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000130000-g000104.json",
+        "scenario_seeds": [
+          6613126506041125315,
+          6573488599283881048,
+          4811979679182256495,
+          1416733681743060430,
+          1338993407418529631,
+          3012362072002065124,
+          6940882295917748303,
+          5611576411035492193,
+          192593416830431387,
+          3847145556997147830
+        ],
+        "wall_seconds": 16664.120423416607
+      },
+      {
+        "steps": 132500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 19.01999999999911,
+          "mean_navigation_time": 19.01999999999911,
+          "mean_path_length": 3.4175060769220535,
+          "mean_success_path_length": 3.4175060769220535,
+          "mean_return": 25.041251895902622,
+          "mean_success_weighted_directness": 0.9381251135230191
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000132500-g000106.json",
+        "scenario_seeds": [
+          8773975533810583807,
+          6126132172919931549,
+          7247826126456813893,
+          5207507740198804385,
+          8194815017487144849,
+          5033080860855477563,
+          6696429272450330883,
+          2436512957148473176,
+          6422996495492559412,
+          8967482007540222652
+        ],
+        "wall_seconds": 16686.903732166626
+      },
+      {
+        "steps": 135000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.819999999999986,
+          "mean_navigation_time": 17.819999999999986,
+          "mean_path_length": 3.2487191786092438,
+          "mean_success_path_length": 3.2487191786092438,
+          "mean_return": 24.357726107810706,
+          "mean_success_weighted_directness": 0.9317238964016529
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000135000-g000108.json",
+        "scenario_seeds": [
+          5491550662772735987,
+          2742803980904336481,
+          5129063566076845296,
+          6882120002514510926,
+          8863600239431486692,
+          4390292172898481763,
+          1689669943243036399,
+          2121988843801800601,
+          5298078964869242355,
+          6892598327323815134
+        ],
+        "wall_seconds": 16708.50858804211
+      },
+      {
+        "steps": 137500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 19.866666666665648,
+          "mean_navigation_time": 18.799999999999056,
+          "mean_path_length": 3.4173249286801637,
+          "mean_success_path_length": 3.6185366838094177,
+          "mean_return": 23.469620051127926,
+          "mean_success_weighted_directness": 0.8646755793762848
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000137500-g000110.json",
+        "scenario_seeds": [
+          1976413707667228138,
+          6161971450377595059,
+          6312392021794287019,
+          6876389595843147927,
+          6038556445753781899,
+          7471571250140924458,
+          4904059886361764490,
+          7920749245349599091,
+          9116460293476369770,
+          5389746909488407162
+        ],
+        "wall_seconds": 16729.75489691738
+      },
+      {
+        "steps": 140000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.280000000000124,
+          "mean_navigation_time": 14.280000000000124,
+          "mean_path_length": 2.6294414302142917,
+          "mean_success_path_length": 2.6294414302142917,
+          "mean_return": 21.79712594367146,
+          "mean_success_weighted_directness": 0.9431096182838342
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000140000-g000112.json",
+        "scenario_seeds": [
+          6074850242531724686,
+          7801508685864902425,
+          5335304921157448929,
+          546797493924260343,
+          4049832565752069351,
+          8950871203132401542,
+          341625185727138654,
+          3097436385505314127,
+          5819614322856923622,
+          6715119944602093901
+        ],
+        "wall_seconds": 16750.03976975009
+      },
+      {
+        "steps": 142500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.180000000000309,
+          "mean_navigation_time": 15.180000000000309,
+          "mean_path_length": 2.764559139373423,
+          "mean_success_path_length": 2.764559139373423,
+          "mean_return": 22.471704525456687,
+          "mean_success_weighted_directness": 0.9562615930227734
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000142500-g000114.json",
+        "scenario_seeds": [
+          8773981630234085294,
+          441457425280177334,
+          6244350183046195052,
+          4918771215803863097,
+          2370880790490615940,
+          5832042703894926083,
+          3642971869080138900,
+          2271205009535043069,
+          918873730628973678,
+          514379564405389183
+        ],
+        "wall_seconds": 16771.287582124583
+      },
+      {
+        "steps": 145000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.719999999999592,
+          "mean_navigation_time": 15.719999999999592,
+          "mean_path_length": 2.838685501719754,
+          "mean_success_path_length": 2.838685501719754,
+          "mean_return": 22.619466014531696,
+          "mean_success_weighted_directness": 0.9439841958156772
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000145000-g000116.json",
+        "scenario_seeds": [
+          3587147276757800175,
+          4216892347239116035,
+          2714661065081170991,
+          905793100459913643,
+          1620990896377047313,
+          2896576176772074788,
+          6573323953283162311,
+          7034029170904757761,
+          6022769956001249985,
+          387459213438002738
+        ],
+        "wall_seconds": 16792.687148374505
+      },
+      {
+        "steps": 147500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.759999999998769,
+          "mean_navigation_time": 15.759999999998769,
+          "mean_path_length": 2.8989609535055068,
+          "mean_success_path_length": 2.8989609535055068,
+          "mean_return": 23.278148533291986,
+          "mean_success_weighted_directness": 0.9604863553801242
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000147500-g000118.json",
+        "scenario_seeds": [
+          6224930346925937838,
+          1456677314357584863,
+          5410124750790867517,
+          2897786841971105442,
+          2476200572520367231,
+          652854132995571294,
+          6442797546638109404,
+          6174501975903905742,
+          20038644129140674,
+          3447826788116091887
+        ],
+        "wall_seconds": 16814.34194812458
+      },
+      {
+        "steps": 150000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.840000000000037,
+          "mean_navigation_time": 15.840000000000037,
+          "mean_path_length": 2.8308330802831616,
+          "mean_success_path_length": 2.8308330802831616,
+          "mean_return": 22.593057426300582,
+          "mean_success_weighted_directness": 0.9375924085073336
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000150000-g000120.json",
+        "scenario_seeds": [
+          2061992585889028139,
+          8042532607121929454,
+          6483563397197271570,
+          4934691364378079626,
+          5302028122735130933,
+          3065048283509727253,
+          7204643017265412506,
+          6200861277114656289,
+          629525941276677717,
+          6349681891948960490
+        ],
+        "wall_seconds": 16834.948822500184
+      },
+      {
+        "steps": 152500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.119999999999948,
+          "mean_navigation_time": 18.119999999999948,
+          "mean_path_length": 3.37127363989269,
+          "mean_success_path_length": 3.37127363989269,
+          "mean_return": 25.347198797831684,
+          "mean_success_weighted_directness": 0.9587104743589314
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000152500-g000122.json",
+        "scenario_seeds": [
+          4955922012695048420,
+          2162094584984629582,
+          6926287090662096918,
+          925935665431613769,
+          7018917141824797348,
+          8694409992658600197,
+          2762485391243405089,
+          1876784070056078425,
+          5377209037788488280,
+          1521688457288292051
+        ],
+        "wall_seconds": 16856.223011833616
+      },
+      {
+        "steps": 155000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.300000000000175,
+          "mean_navigation_time": 17.300000000000175,
+          "mean_path_length": 3.065435784448941,
+          "mean_success_path_length": 3.065435784448941,
+          "mean_return": 23.573376368020057,
+          "mean_success_weighted_directness": 0.9471243947129278
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000155000-g000124.json",
+        "scenario_seeds": [
+          196568631253162621,
+          6428136784097939255,
+          4439284108880934091,
+          7182229377336799750,
+          2697297290322977517,
+          7395814154815565336,
+          2013716133334497606,
+          9094591527292920119,
+          7780684094815838819,
+          6740821409759719101
+        ],
+        "wall_seconds": 16877.906112584285
+      },
+      {
+        "steps": 157500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.600000000000048,
+          "mean_navigation_time": 16.600000000000048,
+          "mean_path_length": 3.0772329930532907,
+          "mean_success_path_length": 3.0772329930532907,
+          "mean_return": 24.063512055855114,
+          "mean_success_weighted_directness": 0.9632745291666008
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000157500-g000126.json",
+        "scenario_seeds": [
+          5768121878311299944,
+          8840145679458490562,
+          3333683636102545841,
+          8371403504933405561,
+          6177035927052321581,
+          7694598944682175953,
+          8216960917088241415,
+          8808778735620069611,
+          7893709299313593789,
+          6526134700036164728
+        ],
+        "wall_seconds": 16898.69644995872
+      },
+      {
+        "steps": 160000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.999999999999396,
+          "mean_navigation_time": 16.999999999999396,
+          "mean_path_length": 3.02043785891819,
+          "mean_success_path_length": 3.02043785891819,
+          "mean_return": 23.385542598908817,
+          "mean_success_weighted_directness": 0.9540003510905303
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000160000-g000128.json",
+        "scenario_seeds": [
+          5029208095616489443,
+          422848422474724244,
+          6796848332387150814,
+          4688314659067857361,
+          1939940056338186083,
+          6560431235980293756,
+          3696672543259912253,
+          1351474916973544930,
+          2401343867087234137,
+          3671163738565759318
+        ],
+        "wall_seconds": 16920.288908542134
+      },
+      {
+        "steps": 162500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.160000000000675,
+          "mean_navigation_time": 17.160000000000675,
+          "mean_path_length": 3.108676278660409,
+          "mean_success_path_length": 3.108676278660409,
+          "mean_return": 23.898421164013747,
+          "mean_success_weighted_directness": 0.947741774462332
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000162500-g000130.json",
+        "scenario_seeds": [
+          7157672542695484895,
+          7285591185424502056,
+          507187957268257741,
+          5063125387411947320,
+          2566430041876186938,
+          6211243423024021570,
+          6636996021232796841,
+          4041673723968818302,
+          1487950605545312049,
+          2124519488731994706
+        ],
+        "wall_seconds": 16941.83770712465
+      },
+      {
+        "steps": 165000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.18000000000037,
+          "mean_navigation_time": 16.18000000000037,
+          "mean_path_length": 2.9529938649086427,
+          "mean_success_path_length": 2.9529938649086427,
+          "mean_return": 23.17405911320728,
+          "mean_success_weighted_directness": 0.9411182800753227
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000165000-g000132.json",
+        "scenario_seeds": [
+          5914558477729090404,
+          243918200127866090,
+          7678255671833521462,
+          5810899985801503965,
+          4130934807361546302,
+          574279753403452052,
+          865213792689277115,
+          3220389730425820982,
+          6560349448517577854,
+          2897326805153844397
+        ],
+        "wall_seconds": 16962.493003583513
+      },
+      {
+        "steps": 167500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.50000000000013,
+          "mean_navigation_time": 17.50000000000013,
+          "mean_path_length": 3.1308036913487745,
+          "mean_success_path_length": 3.1308036913487745,
+          "mean_return": 23.994043667133734,
+          "mean_success_weighted_directness": 0.9466076228940296
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000167500-g000134.json",
+        "scenario_seeds": [
+          7280882543782108453,
+          286199198905454664,
+          2882140205365527583,
+          6118401787399260430,
+          1459771557859110331,
+          7240769478934206816,
+          8942404276755635044,
+          3180563808986716913,
+          6346252619206667086,
+          3790982225024020968
+        ],
+        "wall_seconds": 16984.326162500307
+      },
+      {
+        "steps": 170000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.755555555555155,
+          "mean_navigation_time": 14.979999999999574,
+          "mean_path_length": 2.7021600537743224,
+          "mean_success_path_length": 2.8535259017143093,
+          "mean_return": 20.25242756527249,
+          "mean_success_weighted_directness": 0.8594056361532791
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000170000-g000136.json",
+        "scenario_seeds": [
+          3569508489252635524,
+          2859955693014143392,
+          9198792221959205769,
+          2099205805280129091,
+          1026650595744034790,
+          3082572033696674642,
+          4120939700064238600,
+          6054133928331139410,
+          4352476347365810420,
+          7832795340507023693
+        ],
+        "wall_seconds": 17005.186650750227
+      },
+      {
+        "steps": 172500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.00000000000001,
+          "mean_navigation_time": 14.00000000000001,
+          "mean_path_length": 2.562382377647115,
+          "mean_success_path_length": 2.562382377647115,
+          "mean_return": 21.599207413280396,
+          "mean_success_weighted_directness": 0.9496986442835768
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000172500-g000138.json",
+        "scenario_seeds": [
+          8805379749890029396,
+          917637583104767850,
+          4590518258768790825,
+          2685543694346903827,
+          4797010794151058091,
+          5211128181325265153,
+          6066338492765148576,
+          8379092444971942673,
+          3111594350063984007,
+          5598579180692208143
+        ],
+        "wall_seconds": 17027.19738112483
+      },
+      {
+        "steps": 175000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.61999999999993,
+          "mean_navigation_time": 15.61999999999993,
+          "mean_path_length": 2.802939975260908,
+          "mean_success_path_length": 2.802939975260908,
+          "mean_return": 22.38712534727952,
+          "mean_success_weighted_directness": 0.9438911707526554
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000175000-g000140.json",
+        "scenario_seeds": [
+          4898702410634885579,
+          7129680995847561394,
+          7869471190195419105,
+          4059837498583877786,
+          1296116446628559877,
+          3139542004332593000,
+          7303456962847327108,
+          4138622796753536587,
+          4585635756371282258,
+          9116010929527545434
+        ],
+        "wall_seconds": 17049.66598245874
+      },
+      {
+        "steps": 177500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.400000000000038,
+          "mean_navigation_time": 16.019999999999424,
+          "mean_path_length": 2.6604285292549825,
+          "mean_success_path_length": 2.5687041419004766,
+          "mean_return": 18.76230119599381,
+          "mean_success_weighted_directness": 0.8469338759200047
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000177500-g000142.json",
+        "scenario_seeds": [
+          9198666899581038693,
+          8061350394068330544,
+          8890165298943254662,
+          7133461292718291201,
+          6209988753110175799,
+          7677380573082665966,
+          2910747084974555206,
+          6486117959787383851,
+          2819173218796309756,
+          3515228438652741904
+        ],
+        "wall_seconds": 17071.672821791843
+      },
+      {
+        "steps": 180000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.800000000000404,
+          "mean_navigation_time": 14.800000000000404,
+          "mean_path_length": 2.6805760473872446,
+          "mean_success_path_length": 2.6805760473872446,
+          "mean_return": 21.964357588877228,
+          "mean_success_weighted_directness": 0.9378422133322794
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000180000-g000144.json",
+        "scenario_seeds": [
+          7148200602539960415,
+          5764158195092104837,
+          8592948785769154263,
+          82854221889725433,
+          858937414565216122,
+          4291488116271195424,
+          9181703226842359187,
+          648235016728749287,
+          7608437992099763705,
+          8328256087404264872
+        ],
+        "wall_seconds": 17093.145213499665
+      },
+      {
+        "steps": 182500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.139999999999425,
+          "mean_navigation_time": 17.139999999999425,
+          "mean_path_length": 3.119509734766557,
+          "mean_success_path_length": 3.119509734766557,
+          "mean_return": 24.094836414879612,
+          "mean_success_weighted_directness": 0.9539476276005061
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000182500-g000146.json",
+        "scenario_seeds": [
+          261999104333805057,
+          2906601114478736392,
+          3996715515813956172,
+          1345058542150273140,
+          3556738316445718823,
+          6485346244093953892,
+          7789973324768121807,
+          7049302518699516048,
+          9103368572417777090,
+          9040799561402759800
+        ],
+        "wall_seconds": 17115.09033837542
+      },
+      {
+        "steps": 185000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 22.36000000000042,
+          "mean_navigation_time": 22.36000000000042,
+          "mean_path_length": 3.85633248420581,
+          "mean_success_path_length": 3.85633248420581,
+          "mean_return": 25.098269912905433,
+          "mean_success_weighted_directness": 0.890308100683556
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000185000-g000148.json",
+        "scenario_seeds": [
+          2310800545303276396,
+          7769251872411876498,
+          2155086951556355537,
+          2256491806853287311,
+          3479717557415492195,
+          5590176384548182175,
+          4513734574929404569,
+          6822511207890703591,
+          750705554910101115,
+          4553313100675593244
+        ],
+        "wall_seconds": 17137.995320875198
+      },
+      {
+        "steps": 187500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.888888888889362,
+          "mean_navigation_time": 14.960000000000615,
+          "mean_path_length": 2.7112779786947843,
+          "mean_success_path_length": 2.709609825098137,
+          "mean_return": 20.235870809034388,
+          "mean_success_weighted_directness": 0.8581503357974916
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000187500-g000150.json",
+        "scenario_seeds": [
+          4536287984115446761,
+          1227502894554874722,
+          2874607510355407020,
+          2454889706477385723,
+          6410461145532814381,
+          4195141090089851739,
+          3538443408443246462,
+          1164810522993459409,
+          6816673427655606926,
+          5138050594480025375
+        ],
+        "wall_seconds": 17159.630572709255
+      },
+      {
+        "steps": 190000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.888888888889186,
+          "mean_navigation_time": 14.100000000000213,
+          "mean_path_length": 2.516605386930583,
+          "mean_success_path_length": 2.690147055974281,
+          "mean_return": 18.978284939973516,
+          "mean_success_weighted_directness": 0.8402894055767917
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000190000-g000152.json",
+        "scenario_seeds": [
+          2710101191670539481,
+          6894135464358484494,
+          769715885808189871,
+          2989186834329836662,
+          5188309202490431453,
+          2591555222473360723,
+          5983934875834514273,
+          7526766019931643614,
+          6674490900474694513,
+          8089233240264939757
+        ],
+        "wall_seconds": 17180.788800749928
+      },
+      {
+        "steps": 192500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 19.73999999999989,
+          "mean_navigation_time": 19.73999999999989,
+          "mean_path_length": 3.5524584896097635,
+          "mean_success_path_length": 3.5524584896097635,
+          "mean_return": 25.62281710282644,
+          "mean_success_weighted_directness": 0.932649910629632
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000192500-g000154.json",
+        "scenario_seeds": [
+          4800699089800254346,
+          354870134863797868,
+          2660013506230334489,
+          5430948740221362679,
+          8592787568174433223,
+          2806507636446500478,
+          5197868007827519808,
+          901678849463291018,
+          1353135909558180166,
+          4669870585580555211
+        ],
+        "wall_seconds": 17202.709535500035
+      },
+      {
+        "steps": 195000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.240000000000112,
+          "mean_navigation_time": 14.240000000000112,
+          "mean_path_length": 2.6416114497850094,
+          "mean_success_path_length": 2.6416114497850094,
+          "mean_return": 22.041303736075314,
+          "mean_success_weighted_directness": 0.9641003474003259
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000195000-g000156.json",
+        "scenario_seeds": [
+          6997263185778334401,
+          6205092700383360514,
+          8987944811061937004,
+          7369849875147919702,
+          1668859304512402669,
+          1440381662060874042,
+          5668077288654383203,
+          275435930309005630,
+          1300711222326211979,
+          8539622682737270328
+        ],
+        "wall_seconds": 17223.133305459283
+      },
+      {
+        "steps": 197500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.20000000000007,
+          "mean_navigation_time": 16.20000000000007,
+          "mean_path_length": 2.8772939342747934,
+          "mean_success_path_length": 2.8772939342747934,
+          "mean_return": 22.72142155233762,
+          "mean_success_weighted_directness": 0.9376574996623657
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000197500-g000158.json",
+        "scenario_seeds": [
+          4301231436334005668,
+          4967809743447065420,
+          4062541723063986627,
+          8507542488896013718,
+          3780702892805736325,
+          3321435343691142275,
+          4636837194845515450,
+          8423260962518605888,
+          3358826426217468021,
+          2920282938583115218
+        ],
+        "wall_seconds": 17244.831056583673
+      },
+      {
+        "steps": 200000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.460000000000665,
+          "mean_navigation_time": 14.460000000000665,
+          "mean_path_length": 2.5966941810964626,
+          "mean_success_path_length": 2.5966941810964626,
+          "mean_return": 21.666885853920782,
+          "mean_success_weighted_directness": 0.9515357146314143
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000200000-g000160.json",
+        "scenario_seeds": [
+          7162596826247294759,
+          6156286127409349420,
+          3508223854940837614,
+          1826878943721189122,
+          8547009499381851680,
+          6399302923640530918,
+          8047927292968947369,
+          9032924636859497719,
+          3046453346385564340,
+          6353154440457212190
+        ],
+        "wall_seconds": 17266.463232208975
+      },
+      {
+        "steps": 202500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.159999999999432,
+          "mean_navigation_time": 15.159999999999432,
+          "mean_path_length": 2.748059958960921,
+          "mean_success_path_length": 2.748059958960921,
+          "mean_return": 22.20478963255193,
+          "mean_success_weighted_directness": 0.9472586556252501
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000202500-g000162.json",
+        "scenario_seeds": [
+          5251515610234882549,
+          2033327822703655491,
+          1887901567124771186,
+          5450061083088681559,
+          4598501144852199689,
+          5849757384795209304,
+          3266800861553887187,
+          5472052581519179423,
+          5135453704322332071,
+          3801586744867557937
+        ],
+        "wall_seconds": 17287.734016750008
+      },
+      {
+        "steps": 205000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 19.57999999999914,
+          "mean_navigation_time": 19.57999999999914,
+          "mean_path_length": 3.5378000772805236,
+          "mean_success_path_length": 3.5378000772805236,
+          "mean_return": 25.37444643038992,
+          "mean_success_weighted_directness": 0.9195577905294277
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000205000-g000164.json",
+        "scenario_seeds": [
+          4535050061311817351,
+          8097187298678176424,
+          8635156356464186172,
+          4597375629740483151,
+          5154141073067150453,
+          5928293584330359083,
+          4063163112692261474,
+          2004167921585557105,
+          9067046995106053342,
+          5130256952415267143
+        ],
+        "wall_seconds": 17309.779856584035
+      },
+      {
+        "steps": 207500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.57999999999916,
+          "mean_navigation_time": 18.57999999999916,
+          "mean_path_length": 3.3059657607213113,
+          "mean_success_path_length": 3.3059657607213113,
+          "mean_return": 24.522800079026723,
+          "mean_success_weighted_directness": 0.9391028294457426
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000207500-g000166.json",
+        "scenario_seeds": [
+          2751631974351940462,
+          458427184194402032,
+          6392336503435213742,
+          8339413009664959505,
+          6075321469840629335,
+          2074345296624394800,
+          3838045676106980269,
+          6414629705096104970,
+          2662310456840599881,
+          7661447549184645597
+        ],
+        "wall_seconds": 17333.758671750315
+      },
+      {
+        "steps": 210000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.860000000000294,
+          "mean_navigation_time": 15.860000000000294,
+          "mean_path_length": 2.8761659049119515,
+          "mean_success_path_length": 2.8761659049119515,
+          "mean_return": 23.076522990550757,
+          "mean_success_weighted_directness": 0.9550103016018309
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000210000-g000168.json",
+        "scenario_seeds": [
+          7269293917793555517,
+          3433613394173315308,
+          1244366407605717959,
+          5125841284241803999,
+          2382418377522003553,
+          7294869505539488608,
+          8152440436421322040,
+          6275854345838650495,
+          5964250182269889205,
+          6330723262610293560
+        ],
+        "wall_seconds": 17356.27401204221
+      },
+      {
+        "steps": 212500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.799999999999919,
+          "mean_navigation_time": 14.979999999999867,
+          "mean_path_length": 2.725022399095672,
+          "mean_success_path_length": 2.8904157779436814,
+          "mean_return": 20.29748801622112,
+          "mean_success_weighted_directness": 0.8632111907406868
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000212500-g000170.json",
+        "scenario_seeds": [
+          5397617756529582483,
+          2630685497968103273,
+          7569829223184220071,
+          4050589537765283200,
+          1428783495629723314,
+          5165379568755044106,
+          3362416358568732918,
+          5881872025055720401,
+          2246051762195967388,
+          6423718401917508080
+        ],
+        "wall_seconds": 17377.085809209384
+      },
+      {
+        "steps": 215000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.999999999999424,
+          "mean_navigation_time": 16.999999999999424,
+          "mean_path_length": 3.090248914095724,
+          "mean_success_path_length": 3.090248914095724,
+          "mean_return": 24.164263504669897,
+          "mean_success_weighted_directness": 0.9662667882606606
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000215000-g000172.json",
+        "scenario_seeds": [
+          1366911684362938673,
+          2559783094865494354,
+          4907179563216543554,
+          2949801644502763299,
+          5608229502411836402,
+          5206565108810448481,
+          8089032359554814851,
+          941722344149399090,
+          6703147706382717259,
+          5889820337546367683
+        ],
+        "wall_seconds": 17397.832452333532
+      },
+      {
+        "steps": 217500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.059999999999974,
+          "mean_navigation_time": 15.059999999999974,
+          "mean_path_length": 2.7533609656135303,
+          "mean_success_path_length": 2.7533609656135303,
+          "mean_return": 22.320873896887072,
+          "mean_success_weighted_directness": 0.9474657441451774
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000217500-g000174.json",
+        "scenario_seeds": [
+          8736969868236166330,
+          8819473248382972768,
+          969830477330367593,
+          4318427942470205010,
+          6344706640237398653,
+          615026778671793237,
+          4944221631112361315,
+          7668025604057245202,
+          7113376774891576933,
+          3279905500736696744
+        ],
+        "wall_seconds": 17419.06989229191
+      },
+      {
+        "steps": 220000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.240000000000144,
+          "mean_navigation_time": 18.240000000000144,
+          "mean_path_length": 3.287976908348179,
+          "mean_success_path_length": 3.287976908348179,
+          "mean_return": 24.73062800954568,
+          "mean_success_weighted_directness": 0.9481899864850958
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000220000-g000176.json",
+        "scenario_seeds": [
+          3422870827187032940,
+          6596510063281991060,
+          5967134158887872075,
+          7670603862644099397,
+          3441302500846346880,
+          2380010636537628539,
+          5232348016063558692,
+          5439180484404147021,
+          8414660103402014626,
+          2486353808043702007
+        ],
+        "wall_seconds": 17440.35365841724
+      },
+      {
+        "steps": 222500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.68000000000007,
+          "mean_navigation_time": 16.68000000000007,
+          "mean_path_length": 3.0211126188552937,
+          "mean_success_path_length": 3.0211126188552937,
+          "mean_return": 23.818737384800674,
+          "mean_success_weighted_directness": 0.9623104516996148
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000222500-g000178.json",
+        "scenario_seeds": [
+          8126951034695255026,
+          7446902658061805760,
+          6982583086867479438,
+          6093122448292697276,
+          7827816448799511373,
+          3960849936002129878,
+          3376412300472143783,
+          8183588221760774821,
+          4126181496339202925,
+          4002361110500355558
+        ],
+        "wall_seconds": 17462.03017591685
+      },
+      {
+        "steps": 225000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 13.76000000000037,
+          "mean_navigation_time": 13.76000000000037,
+          "mean_path_length": 2.5244782131160077,
+          "mean_success_path_length": 2.5244782131160077,
+          "mean_return": 21.443817784982446,
+          "mean_success_weighted_directness": 0.9564949511138889
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000225000-g000180.json",
+        "scenario_seeds": [
+          2457505559612567542,
+          2214862593238201691,
+          4504827547953991683,
+          3643313545013087846,
+          3042195991782434203,
+          6506550985519635720,
+          2998853349427684981,
+          8006282886910651114,
+          5303087226014517221,
+          5260044588988600169
+        ],
+        "wall_seconds": 17482.664446791634
+      },
+      {
+        "steps": 227500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.980000000000345,
+          "mean_navigation_time": 17.980000000000345,
+          "mean_path_length": 3.3253264764633754,
+          "mean_success_path_length": 3.3253264764633754,
+          "mean_return": 25.035980295759423,
+          "mean_success_weighted_directness": 0.9502295010304984
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000227500-g000182.json",
+        "scenario_seeds": [
+          8670661915494967409,
+          5280652447102636478,
+          5363991468681348203,
+          3033367794299110588,
+          8040419621689596346,
+          7280758930616884387,
+          942802709958856573,
+          4941299681089810411,
+          7263243231510124848,
+          6524389913664574462
+        ],
+        "wall_seconds": 17504.35364833381
+      },
+      {
+        "steps": 230000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.879999999999583,
+          "mean_navigation_time": 17.879999999999583,
+          "mean_path_length": 3.248736080029859,
+          "mean_success_path_length": 3.248736080029859,
+          "mean_return": 24.58233821736485,
+          "mean_success_weighted_directness": 0.9515166558502173
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000230000-g000184.json",
+        "scenario_seeds": [
+          4200882710760744072,
+          4221450937452204696,
+          1674257804731895613,
+          6117187743076146174,
+          7407286486841001816,
+          4732153571050583016,
+          8254119551575860523,
+          524472279139582872,
+          3555064437759043834,
+          4236982417990356014
+        ],
+        "wall_seconds": 17525.756511959247
+      },
+      {
+        "steps": 232500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.100000000000275,
+          "mean_navigation_time": 14.100000000000275,
+          "mean_path_length": 2.618119174594876,
+          "mean_success_path_length": 2.618119174594876,
+          "mean_return": 22.01602181273351,
+          "mean_success_weighted_directness": 0.9665510833524301
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000232500-g000186.json",
+        "scenario_seeds": [
+          8709071215925098032,
+          244113123067513295,
+          7265847072074132959,
+          9003147194955402846,
+          2542803809882702365,
+          588148185124109209,
+          101514446757078682,
+          33960325332940579,
+          4874292616752265281,
+          4357136365514947777
+        ],
+        "wall_seconds": 17546.709626999684
+      },
+      {
+        "steps": 235000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.040000000000212,
+          "mean_navigation_time": 17.040000000000212,
+          "mean_path_length": 3.0936976895577564,
+          "mean_success_path_length": 3.0936976895577564,
+          "mean_return": 23.984542635894616,
+          "mean_success_weighted_directness": 0.9599934129277699
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000235000-g000188.json",
+        "scenario_seeds": [
+          2057186819031075598,
+          4001849856803872567,
+          4549908320250460612,
+          5729684203072544671,
+          4896619863086212251,
+          9131759524039558018,
+          8035824654289797763,
+          4328457016393273888,
+          7794445399151668913,
+          2472738068432228103
+        ],
+        "wall_seconds": 17568.719474666752
+      },
+      {
+        "steps": 237500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.079999999999899,
+          "mean_navigation_time": 15.079999999999899,
+          "mean_path_length": 2.7375744383390286,
+          "mean_success_path_length": 2.7375744383390286,
+          "mean_return": 22.254183919367573,
+          "mean_success_weighted_directness": 0.9503080087726138
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000237500-g000190.json",
+        "scenario_seeds": [
+          943047187889565866,
+          9201269224886161764,
+          5753182946343224913,
+          215350737033978502,
+          6394050559994680008,
+          2201442064508100818,
+          2355401946291980638,
+          1331770767857351934,
+          1591899727179530792,
+          8579167803611060652
+        ],
+        "wall_seconds": 17589.35252608359
+      },
+      {
+        "steps": 240000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.200000000000145,
+          "mean_navigation_time": 16.64000000000018,
+          "mean_path_length": 3.06799891418376,
+          "mean_success_path_length": 3.1822836006712603,
+          "mean_return": 22.039204032619182,
+          "mean_success_weighted_directness": 0.8674568005742704
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000240000-g000192.json",
+        "scenario_seeds": [
+          6088575826658007024,
+          775014709397410081,
+          5547475124697837088,
+          2074887908418219938,
+          1220545528338050948,
+          6046814312765887042,
+          3336213981426073540,
+          5458618972202520058,
+          6508566376579743060,
+          3434065085424701722
+        ],
+        "wall_seconds": 17610.098391291685
+      },
+      {
+        "steps": 242500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.220000000000322,
+          "mean_navigation_time": 17.220000000000322,
+          "mean_path_length": 3.119452526768302,
+          "mean_success_path_length": 3.119452526768302,
+          "mean_return": 24.382427327541528,
+          "mean_success_weighted_directness": 0.971864865430448
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000242500-g000194.json",
+        "scenario_seeds": [
+          4714979387624084713,
+          8130520539031833252,
+          1655931695454938863,
+          8867150995106624943,
+          2414951235995095677,
+          5468583425890068831,
+          1502748758727681731,
+          5729175872862096737,
+          1418425749895439416,
+          6197178451607475889
+        ],
+        "wall_seconds": 17630.80690895859
+      },
+      {
+        "steps": 245000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.977777777777586,
+          "mean_navigation_time": 15.959999999999775,
+          "mean_path_length": 2.921204473075378,
+          "mean_success_path_length": 3.120983523105755,
+          "mean_return": 21.01231388142093,
+          "mean_success_weighted_directness": 0.8573060717698647
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000245000-g000196.json",
+        "scenario_seeds": [
+          5355516602826011605,
+          6814539348238651260,
+          4474287535606410486,
+          6864873570469920409,
+          3165516690646893235,
+          8709973871952611674,
+          6717871590058402442,
+          5929386663418000669,
+          6891886522644861359,
+          972022860609977427
+        ],
+        "wall_seconds": 17651.704589917324
+      },
+      {
+        "steps": 247500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.459999999999843,
+          "mean_navigation_time": 15.459999999999843,
+          "mean_path_length": 2.8020005521481273,
+          "mean_success_path_length": 2.8020005521481273,
+          "mean_return": 22.802867230493046,
+          "mean_success_weighted_directness": 0.9588630054042495
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000247500-g000198.json",
+        "scenario_seeds": [
+          3577023499388605389,
+          7173801213215835054,
+          1935287014675052155,
+          9219199771689815005,
+          3777864206790342827,
+          3890221024892724651,
+          5992400161556871071,
+          3449744307913516910,
+          7813699300842574021,
+          9214556464282949472
+        ],
+        "wall_seconds": 17673.312816458754
+      },
+      {
+        "steps": 250000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 11.400000000000318,
+          "mean_navigation_time": 11.480000000000361,
+          "mean_path_length": 2.0907023915830774,
+          "mean_success_path_length": 2.097428915859831,
+          "mean_return": 17.483567248777433,
+          "mean_success_weighted_directness": 0.8694543344329274
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000250000-g000200.json",
+        "scenario_seeds": [
+          2603237068976521439,
+          3101840270289208300,
+          3725135416679446177,
+          5590687207372588184,
+          250593308362658447,
+          7934189645599997090,
+          7046163524115680188,
+          3829544234264479945,
+          1041996434489186316,
+          3301397838384780720
+        ],
+        "wall_seconds": 17693.977981625125
+      },
+      {
+        "steps": 252500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.080000000000645,
+          "mean_navigation_time": 17.080000000000645,
+          "mean_path_length": 3.06574219392751,
+          "mean_success_path_length": 3.06574219392751,
+          "mean_return": 23.97256513903934,
+          "mean_success_weighted_directness": 0.9639069544944989
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000252500-g000202.json",
+        "scenario_seeds": [
+          1850639643361063498,
+          6718875850971685658,
+          5981343639951074358,
+          8872258345454192202,
+          1653472897708323780,
+          2656448515829256562,
+          5536533587662192976,
+          5626583105978924303,
+          378348843490270129,
+          7010817288937238295
+        ],
+        "wall_seconds": 17716.383374541998
+      },
+      {
+        "steps": 255000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.940000000000202,
+          "mean_navigation_time": 14.940000000000202,
+          "mean_path_length": 2.7602216255709724,
+          "mean_success_path_length": 2.7602216255709724,
+          "mean_return": 22.560530476265797,
+          "mean_success_weighted_directness": 0.9558026791332809
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000255000-g000204.json",
+        "scenario_seeds": [
+          3026667048061832571,
+          7876831034834223256,
+          5312134120344032651,
+          8570782465043514238,
+          3129269385503333358,
+          8209800314955088552,
+          3123828219452499598,
+          4255760492769884523,
+          1338390248030448228,
+          6321944956642122364
+        ],
+        "wall_seconds": 17737.432180333883
+      },
+      {
+        "steps": 257500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.579999999999227,
+          "mean_navigation_time": 18.579999999999227,
+          "mean_path_length": 3.3127475144857685,
+          "mean_success_path_length": 3.3127475144857685,
+          "mean_return": 24.781517442003576,
+          "mean_success_weighted_directness": 0.9464965558721307
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000257500-g000206.json",
+        "scenario_seeds": [
+          4154881211409633884,
+          7686581285734694492,
+          2039894330642273647,
+          9096055619785368222,
+          2617768670999062669,
+          6878110254561544062,
+          4220762160309284201,
+          2204798297325499539,
+          761621211194428037,
+          7926734801409338618
+        ],
+        "wall_seconds": 17758.776662625372
+      },
+      {
+        "steps": 260000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.699999999999743,
+          "mean_navigation_time": 15.699999999999743,
+          "mean_path_length": 2.9016740211340752,
+          "mean_success_path_length": 2.9016740211340752,
+          "mean_return": 23.23941691213268,
+          "mean_success_weighted_directness": 0.9634400848129794
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000260000-g000208.json",
+        "scenario_seeds": [
+          8370607866284903497,
+          5695650076011513034,
+          7188562512075239965,
+          3420818148044366858,
+          4417944192026227580,
+          3872709720627354572,
+          3146677365227780752,
+          8914424170717027050,
+          4238794890093297846,
+          8187981000488645007
+        ],
+        "wall_seconds": 17779.702597917058
+      },
+      {
+        "steps": 262500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.179999999999968,
+          "mean_navigation_time": 16.179999999999968,
+          "mean_path_length": 2.9620147388453146,
+          "mean_success_path_length": 2.9620147388453146,
+          "mean_return": 23.19856943003753,
+          "mean_success_weighted_directness": 0.9423938799194488
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000262500-g000210.json",
+        "scenario_seeds": [
+          6501466697661636255,
+          2251726058023746744,
+          2312254273282714,
+          7625401049856172186,
+          454420238297745946,
+          5590504004521807317,
+          7362597291473162683,
+          8914775987093073092,
+          4812163134528303748,
+          3624851799990283968
+        ],
+        "wall_seconds": 17800.735780041665
+      },
+      {
+        "steps": 265000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 13.720000000000471,
+          "mean_navigation_time": 13.720000000000471,
+          "mean_path_length": 2.5252583514833224,
+          "mean_success_path_length": 2.5252583514833224,
+          "mean_return": 21.472118735504985,
+          "mean_success_weighted_directness": 0.9561283685809471
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000265000-g000212.json",
+        "scenario_seeds": [
+          9037251347601378478,
+          693140525968511765,
+          2034418280754086422,
+          4921997450209916042,
+          5451138903528485783,
+          243079347408881960,
+          995209785934387276,
+          3585939856962929747,
+          1076758228895424307,
+          8993855704102445464
+        ],
+        "wall_seconds": 17821.8549430836
+      },
+      {
+        "steps": 267500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.466666666666628,
+          "mean_navigation_time": 14.780000000000076,
+          "mean_path_length": 2.5550583238294786,
+          "mean_success_path_length": 2.5046875150352306,
+          "mean_return": 19.166802473018173,
+          "mean_success_weighted_directness": 0.8516914252843535
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000267500-g000214.json",
+        "scenario_seeds": [
+          6301837573274489705,
+          7020154145916629924,
+          7639642519231692756,
+          1416150815421897171,
+          6270629310345083892,
+          3816382440596417867,
+          2355158941388667894,
+          7824863873461297336,
+          292954962733085714,
+          1930155673866998174
+        ],
+        "wall_seconds": 17842.865036667325
+      },
+      {
+        "steps": 270000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.000000000000306,
+          "mean_navigation_time": 17.000000000000306,
+          "mean_path_length": 3.1208456411754426,
+          "mean_success_path_length": 3.1208456411754426,
+          "mean_return": 24.060193730842663,
+          "mean_success_weighted_directness": 0.9558749117344398
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000270000-g000216.json",
+        "scenario_seeds": [
+          8759634011719874542,
+          2631946842523698764,
+          8614128714508773348,
+          1488722522718467552,
+          821119090769438683,
+          2527837022014659219,
+          7556665327150576086,
+          4211165004241275598,
+          6594073111139767104,
+          899353319017506273
+        ],
+        "wall_seconds": 17864.457959334366
+      },
+      {
+        "steps": 272500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.8,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.1,
+          "mean_success_time": 14.550000000000594,
+          "mean_navigation_time": 24.179999999990613,
+          "mean_path_length": 3.5795965042351208,
+          "mean_success_path_length": 2.6865859597936437,
+          "mean_return": 16.98004276101414,
+          "mean_success_weighted_directness": 0.7672572311092515
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000272500-g000218.json",
+        "scenario_seeds": [
+          8926773744182298051,
+          3121212764238137191,
+          6145388179346506183,
+          4511523253412202106,
+          3165973212186995362,
+          2632274006378384527,
+          3665831664408371559,
+          8361560872238472331,
+          8905455263916382556,
+          3971480391724358798
+        ],
+        "wall_seconds": 17887.887860333547
+      },
+      {
+        "steps": 275000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.044444444444576,
+          "mean_navigation_time": 16.020000000000064,
+          "mean_path_length": 2.9285055978824746,
+          "mean_success_path_length": 3.128426538813733,
+          "mean_return": 21.446530092243165,
+          "mean_success_weighted_directness": 0.8717479977018019
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000275000-g000220.json",
+        "scenario_seeds": [
+          7931968010270732709,
+          5871141207608759245,
+          4158528404784022403,
+          3319646879145026426,
+          713946561788405376,
+          4962887676994959079,
+          9088280001942052721,
+          5814645080569576656,
+          6934054431859155273,
+          1473253553261848044
+        ],
+        "wall_seconds": 17908.604621125385
+      },
+      {
+        "steps": 277500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.81999999999944,
+          "mean_navigation_time": 18.81999999999944,
+          "mean_path_length": 3.3653601153900334,
+          "mean_success_path_length": 3.3653601153900334,
+          "mean_return": 24.85755643841665,
+          "mean_success_weighted_directness": 0.940156637334651
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000277500-g000222.json",
+        "scenario_seeds": [
+          516722004004622423,
+          7420745700998987148,
+          6812761229980101365,
+          9154834947454820214,
+          1060050180560646899,
+          6453579812932878311,
+          4040497202585480473,
+          6278602346279846652,
+          8730444745608359139,
+          3815027806509441567
+        ],
+        "wall_seconds": 17930.35382725019
+      },
+      {
+        "steps": 280000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.279999999999552,
+          "mean_navigation_time": 15.279999999999552,
+          "mean_path_length": 2.7899513982836157,
+          "mean_success_path_length": 2.7899513982836157,
+          "mean_return": 22.765168336459983,
+          "mean_success_weighted_directness": 0.9636906013118203
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000280000-g000224.json",
+        "scenario_seeds": [
+          6270238083367529708,
+          4594900579833075517,
+          922770262645880441,
+          6523630138718163846,
+          9137762264446626910,
+          6280391392158643712,
+          8618669763791698939,
+          8597978396772261564,
+          1649567176616387594,
+          133092701143946924
+        ],
+        "wall_seconds": 17951.16167975031
+      },
+      {
+        "steps": 282500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.52000000000036,
+          "mean_navigation_time": 15.52000000000036,
+          "mean_path_length": 2.82906357690418,
+          "mean_success_path_length": 2.82906357690418,
+          "mean_return": 22.775797069402763,
+          "mean_success_weighted_directness": 0.9594050086241067
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000282500-g000226.json",
+        "scenario_seeds": [
+          4287263130894842203,
+          9139143822211301570,
+          2884631364841846669,
+          5771226509224182762,
+          7906502448999881938,
+          6621282633906684724,
+          3087480851841652109,
+          81771371237369383,
+          9218774113569326178,
+          8146520325188232959
+        ],
+        "wall_seconds": 17972.370397958905
+      },
+      {
+        "steps": 285000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.1,
+          "mean_success_time": 14.955555555556211,
+          "mean_navigation_time": 25.459999999990764,
+          "mean_path_length": 3.9357762182359863,
+          "mean_success_path_length": 2.7752918375293785,
+          "mean_return": 20.07205071625601,
+          "mean_success_weighted_directness": 0.8696828918797715
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000285000-g000228.json",
+        "scenario_seeds": [
+          8023658540718564416,
+          5821559120541106901,
+          9137831013984638858,
+          3099908616761346146,
+          8618854171594567097,
+          6480386276067203936,
+          7029310602806282713,
+          4958685065726208451,
+          2451454957539369085,
+          692525748378264136
+        ],
+        "wall_seconds": 17996.11783087533
+      },
+      {
+        "steps": 287500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 19.88888888888831,
+          "mean_navigation_time": 20.459999999999148,
+          "mean_path_length": 3.6863073785637637,
+          "mean_success_path_length": 3.5956011605478873,
+          "mean_return": 24.48305531837581,
+          "mean_success_weighted_directness": 0.8551800915555816
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000287500-g000230.json",
+        "scenario_seeds": [
+          5228719693431974909,
+          2137772311497153679,
+          2393239293073156635,
+          1205504005044966180,
+          2981824697988297760,
+          7646716704611617769,
+          7500362801871124942,
+          1983314352856656360,
+          8894298713300630780,
+          5844277443302760415
+        ],
+        "wall_seconds": 18018.723558750004
+      },
+      {
+        "steps": 290000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.35555555555571,
+          "mean_navigation_time": 16.540000000000113,
+          "mean_path_length": 2.9930938680921506,
+          "mean_success_path_length": 3.164424621234833,
+          "mean_return": 21.434293161513324,
+          "mean_success_weighted_directness": 0.860714169580796
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000290000-g000232.json",
+        "scenario_seeds": [
+          7814150705812436,
+          1169774544185038240,
+          1609337039908230509,
+          6432542629365874943,
+          726889109006633196,
+          6824775543097767931,
+          2722068267301176880,
+          2911003969384468449,
+          7601698439041277516,
+          5952352628479636382
+        ],
+        "wall_seconds": 18039.922752458602
+      },
+      {
+        "steps": 292500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.8,
+          "mean_navigation_time": 15.8,
+          "mean_path_length": 2.778976971690142,
+          "mean_success_path_length": 2.778976971690142,
+          "mean_return": 20.974574048131984,
+          "mean_success_weighted_directness": 0.8980803925128743
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000292500-g000234.json",
+        "scenario_seeds": [
+          4759167936331355361,
+          4130193574191605498,
+          4287708259293568394,
+          4508759419442747405,
+          255929543204791942,
+          1414874583123682012,
+          1141488754788541766,
+          2337477223546960939,
+          6285084963191460659,
+          3165839998645351961
+        ],
+        "wall_seconds": 18061.145396375097
+      },
+      {
+        "steps": 295000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.90000000000021,
+          "mean_navigation_time": 15.90000000000021,
+          "mean_path_length": 2.97688033934445,
+          "mean_success_path_length": 2.97688033934445,
+          "mean_return": 23.591797682253404,
+          "mean_success_weighted_directness": 0.960371159868209
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000295000-g000236.json",
+        "scenario_seeds": [
+          5912326168001641800,
+          342035570091088930,
+          6346594827742796492,
+          1390008279913639800,
+          5410603368651999593,
+          8891003144373435568,
+          1941903334229647784,
+          6037879053818180277,
+          7302418156331249632,
+          3340908403889834768
+        ],
+        "wall_seconds": 18082.26220274996
+      },
+      {
+        "steps": 297500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.999999999999702,
+          "mean_navigation_time": 15.999999999999702,
+          "mean_path_length": 2.923284515028385,
+          "mean_success_path_length": 2.923284515028385,
+          "mean_return": 23.127864271132502,
+          "mean_success_weighted_directness": 0.9473823885998938
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000297500-g000238.json",
+        "scenario_seeds": [
+          8372402079794234081,
+          425858675712102951,
+          8891886208277691697,
+          7160718300930878733,
+          1515171309037374293,
+          5088703898477095800,
+          487481311905204875,
+          4354626990321732815,
+          6333534231162414092,
+          380923498766588502
+        ],
+        "wall_seconds": 18104.67259162478
+      },
+      {
+        "steps": 300000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 18.11999999999842,
+          "mean_navigation_time": 18.11999999999842,
+          "mean_path_length": 3.120510631204347,
+          "mean_success_path_length": 3.120510631204347,
+          "mean_return": 23.535581791106857,
+          "mean_success_weighted_directness": 0.9281708942257033
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000300000-g000240.json",
+        "scenario_seeds": [
+          2499565801782337397,
+          3560423886979608025,
+          1250807181623836093,
+          8538500883378286690,
+          2295305390859785133,
+          9065706771230550522,
+          5050168488560337793,
+          3691164975437976040,
+          4853744556079548812,
+          2790345924359215168
+        ],
+        "wall_seconds": 18126.387285083532
+      },
+      {
+        "steps": 302500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 12.666666666667398,
+          "mean_navigation_time": 13.020000000000849,
+          "mean_path_length": 2.356198215377616,
+          "mean_success_path_length": 2.3573864493451087,
+          "mean_return": 18.511861344748393,
+          "mean_success_weighted_directness": 0.8719242276033958
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000302500-g000242.json",
+        "scenario_seeds": [
+          4445161265550340856,
+          1367064443160479396,
+          576362345194990106,
+          8509236851947848118,
+          2807643495940299706,
+          8396142893869727092,
+          392243598017878585,
+          5887498778079605974,
+          6868046586850619938,
+          2469509899514772094
+        ],
+        "wall_seconds": 18147.593628125265
+      },
+      {
+        "steps": 305000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.4800000000002,
+          "mean_navigation_time": 16.4800000000002,
+          "mean_path_length": 3.1002281998865415,
+          "mean_success_path_length": 3.1002281998865415,
+          "mean_return": 24.353167837183307,
+          "mean_success_weighted_directness": 0.973362268745843
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000305000-g000244.json",
+        "scenario_seeds": [
+          3098485109334793080,
+          1985022721176158634,
+          6134681280902590283,
+          9069421007856222431,
+          2581563153757361079,
+          1843004624198067681,
+          6917457959072855146,
+          8787783918217527054,
+          4640173469867936445,
+          4161610626970880854
+        ],
+        "wall_seconds": 18169.106896542013
+      },
+      {
+        "steps": 307500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.8,
+          "collision_rate": 0.2,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.925000000000033,
+          "mean_navigation_time": 15.69999999999994,
+          "mean_path_length": 2.792048167417676,
+          "mean_success_path_length": 3.2150613661614154,
+          "mean_return": 18.690478804672484,
+          "mean_success_weighted_directness": 0.7740076810823464
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000307500-g000246.json",
+        "scenario_seeds": [
+          2439247702136273093,
+          7697839703148858361,
+          1313676438219804415,
+          6810599914656314320,
+          4015476281450838968,
+          5400149237776630137,
+          2029735208602999294,
+          5045047993657522512,
+          2990271556850410122,
+          5147640650878520805
+        ],
+        "wall_seconds": 18190.484806916676
+      },
+      {
+        "steps": 310000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.200000000000223,
+          "mean_navigation_time": 16.200000000000223,
+          "mean_path_length": 2.998147289057765,
+          "mean_success_path_length": 2.998147289057765,
+          "mean_return": 23.780959034919466,
+          "mean_success_weighted_directness": 0.9668721114993202
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000310000-g000248.json",
+        "scenario_seeds": [
+          2918198009534814278,
+          8225600390521097973,
+          2497590426017310926,
+          8333655836673673750,
+          1381526471863938778,
+          4428774038979963412,
+          923104384640145379,
+          1511337363193399507,
+          4154647012967437972,
+          1974403961860778237
+        ],
+        "wall_seconds": 18212.22122974973
+      },
+      {
+        "steps": 312500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 19.61999999999937,
+          "mean_navigation_time": 19.61999999999937,
+          "mean_path_length": 3.5349434762057568,
+          "mean_success_path_length": 3.5349434762057568,
+          "mean_return": 25.801581652875875,
+          "mean_success_weighted_directness": 0.9490314339039477
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000312500-g000250.json",
+        "scenario_seeds": [
+          2023233627388328564,
+          7922805167284320083,
+          7066345079295658439,
+          5040763292701246744,
+          4185473840646512448,
+          8926841301393434640,
+          2288212601455493496,
+          7123943523040543025,
+          7884265986646310388,
+          3910282795580979426
+        ],
+        "wall_seconds": 18233.74140391685
+      },
+      {
+        "steps": 315000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.700000000000912,
+          "mean_navigation_time": 16.700000000000912,
+          "mean_path_length": 3.082134314622499,
+          "mean_success_path_length": 3.082134314622499,
+          "mean_return": 23.91051382809527,
+          "mean_success_weighted_directness": 0.9550250120119694
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000315000-g000252.json",
+        "scenario_seeds": [
+          5061634922052483886,
+          3004235233889421772,
+          6082895199612601418,
+          2649145776962960843,
+          6389979183930118643,
+          5853869505094037380,
+          503962099829987585,
+          3138018521486031030,
+          7235441664870163258,
+          3962190196892339981
+        ],
+        "wall_seconds": 18255.17228762526
+      },
+      {
+        "steps": 317500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 12.080000000000009,
+          "mean_navigation_time": 12.080000000000009,
+          "mean_path_length": 2.219179582385779,
+          "mean_success_path_length": 2.219179582385779,
+          "mean_return": 20.04286143234766,
+          "mean_success_weighted_directness": 0.9517447740149985
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000317500-g000254.json",
+        "scenario_seeds": [
+          8113049208015982635,
+          974123335277297919,
+          6514149963026886243,
+          1375662877929855739,
+          3076809940607811824,
+          1004829038755883637,
+          8038718866383553295,
+          1528439174491273530,
+          1316314248903442068,
+          6214197572119644422
+        ],
+        "wall_seconds": 18275.87761158403
+      },
+      {
+        "steps": 320000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.533333333333392,
+          "mean_navigation_time": 16.220000000000166,
+          "mean_path_length": 2.9530938892825986,
+          "mean_success_path_length": 3.013642599064724,
+          "mean_return": 21.484239767165768,
+          "mean_success_weighted_directness": 0.8657166514522281
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000320000-g000256.json",
+        "scenario_seeds": [
+          3453019805335247060,
+          6361306868456096310,
+          9160692188349779414,
+          2103093204135919695,
+          7020483206615698841,
+          1598836384582734017,
+          7518550874912947004,
+          8704196994538195450,
+          9114430425851743156,
+          146553434707370755
+        ],
+        "wall_seconds": 18297.033820584416
+      },
+      {
+        "steps": 322500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 0.9,
+          "collision_rate": 0.1,
+          "timeout_rate": 0.0,
+          "mean_success_time": 22.644444444443522,
+          "mean_navigation_time": 21.219999999999118,
+          "mean_path_length": 3.4618811919767922,
+          "mean_success_path_length": 3.7155951852008164,
+          "mean_return": 20.11373130337306,
+          "mean_success_weighted_directness": 0.8033637604835316
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000322500-g000258.json",
+        "scenario_seeds": [
+          7992721612035785731,
+          3789366851600708721,
+          90919111692699895,
+          8046724631559743374,
+          6895819987010844944,
+          5966579899195670692,
+          1344778452465685093,
+          8043239029100209980,
+          3757108597272535946,
+          8193973569137897588
+        ],
+        "wall_seconds": 18319.427965333685
+      },
+      {
+        "steps": 325000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.679999999999687,
+          "mean_navigation_time": 17.679999999999687,
+          "mean_path_length": 3.1807693821237306,
+          "mean_success_path_length": 3.1807693821237306,
+          "mean_return": 23.96586415009279,
+          "mean_success_weighted_directness": 0.9335650806304094
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000325000-g000260.json",
+        "scenario_seeds": [
+          948037159885064403,
+          2422642856983990135,
+          3602949617043660690,
+          5785413711072481005,
+          9056010950626690416,
+          8427211924122396616,
+          5547007149398360316,
+          9025735532769645529,
+          747986929125558010,
+          5991047732639157259
+        ],
+        "wall_seconds": 18344.89597679209
+      },
+      {
+        "steps": 327500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.61999999999989,
+          "mean_navigation_time": 16.61999999999989,
+          "mean_path_length": 2.962703414133286,
+          "mean_success_path_length": 2.962703414133286,
+          "mean_return": 23.483922537973715,
+          "mean_success_weighted_directness": 0.9597545047975305
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000327500-g000262.json",
+        "scenario_seeds": [
+          5111075505557483331,
+          5384398768098261551,
+          3465618194324098307,
+          6216638628176405452,
+          4263339709437478127,
+          3983873551987405047,
+          2326663461802867540,
+          8941800929856719954,
+          7972400838377983135,
+          8755363242727752736
+        ],
+        "wall_seconds": 18367.348876874894
+      },
+      {
+        "steps": 330000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 19.379999999999164,
+          "mean_navigation_time": 19.379999999999164,
+          "mean_path_length": 3.484227854982673,
+          "mean_success_path_length": 3.484227854982673,
+          "mean_return": 25.923615090835273,
+          "mean_success_weighted_directness": 0.9638836888268842
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000330000-g000264.json",
+        "scenario_seeds": [
+          6243434593171796613,
+          1729267736302874551,
+          8208726124059182659,
+          7063752769699723880,
+          2024702049725755083,
+          1983902348668875717,
+          2621276359487163731,
+          8862378887915391501,
+          6484044790919057973,
+          2543675081041650607
+        ],
+        "wall_seconds": 18388.99410641659
+      },
+      {
+        "steps": 332500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 17.959999999999418,
+          "mean_navigation_time": 17.959999999999418,
+          "mean_path_length": 3.2847200238927683,
+          "mean_success_path_length": 3.2847200238927683,
+          "mean_return": 24.798874260429237,
+          "mean_success_weighted_directness": 0.9566838122694581
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000332500-g000266.json",
+        "scenario_seeds": [
+          8579302677581838163,
+          3558310542196058576,
+          9122293027255733242,
+          2002713845928819501,
+          4938170054077680930,
+          2003183189222333555,
+          4529412655357193611,
+          5997428908251515291,
+          7106370009436105702,
+          7535279827722131305
+        ],
+        "wall_seconds": 18411.12240054179
+      },
+      {
+        "steps": 335000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.77999999999972,
+          "mean_navigation_time": 15.77999999999972,
+          "mean_path_length": 2.8855874037939273,
+          "mean_success_path_length": 2.8855874037939273,
+          "mean_return": 23.126529683859477,
+          "mean_success_weighted_directness": 0.9569130226425113
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000335000-g000268.json",
+        "scenario_seeds": [
+          9150321159173077799,
+          5544831025771319210,
+          5741055010626686577,
+          4839193281672033326,
+          9048228986150358865,
+          4874673381538530654,
+          7051182885513217849,
+          2332743808813492051,
+          6253816744301784990,
+          853619447847920768
+        ],
+        "wall_seconds": 18432.451779792085
+      },
+      {
+        "steps": 337500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.519999999999378,
+          "mean_navigation_time": 16.519999999999378,
+          "mean_path_length": 2.937036756090287,
+          "mean_success_path_length": 2.937036756090287,
+          "mean_return": 23.132884361960905,
+          "mean_success_weighted_directness": 0.951552325424282
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000337500-g000270.json",
+        "scenario_seeds": [
+          5175484239256462138,
+          6211562222206659003,
+          3731809076313549824,
+          6196805155819512792,
+          7505655123195213766,
+          1411804625263412787,
+          7860607955834346731,
+          7392876097384868166,
+          158992417955577243,
+          1835993682919267137
+        ],
+        "wall_seconds": 18453.504474459216
+      },
+      {
+        "steps": 340000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.140000000000342,
+          "mean_navigation_time": 14.140000000000342,
+          "mean_path_length": 2.5624426014220125,
+          "mean_success_path_length": 2.5624426014220125,
+          "mean_return": 21.58134267669264,
+          "mean_success_weighted_directness": 0.9472357404520746
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000340000-g000272.json",
+        "scenario_seeds": [
+          6712214131326855050,
+          7272319847745449983,
+          7930010998003167847,
+          4030269162743645198,
+          8922376925074692691,
+          5171459853670628212,
+          2417949131820528297,
+          1695084705426380024,
+          7411183232032841347,
+          7407311930056894680
+        ],
+        "wall_seconds": 18474.27228649985
+      },
+      {
+        "steps": 342500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 16.640000000000377,
+          "mean_navigation_time": 16.640000000000377,
+          "mean_path_length": 2.985838211833623,
+          "mean_success_path_length": 2.985838211833623,
+          "mean_return": 23.662950971210304,
+          "mean_success_weighted_directness": 0.9709285769443152
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000342500-g000274.json",
+        "scenario_seeds": [
+          2036485842021699207,
+          6440406086543692986,
+          5579994165532677623,
+          2246599310266622836,
+          1916588346720824612,
+          1531334029416469071,
+          7358092265607109030,
+          1402681127135381000,
+          5426331899891407263,
+          8001042521988750792
+        ],
+        "wall_seconds": 18496.541603541933
+      },
+      {
+        "steps": 345000,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 14.639999999999635,
+          "mean_navigation_time": 14.639999999999635,
+          "mean_path_length": 2.6835454874167146,
+          "mean_success_path_length": 2.6835454874167146,
+          "mean_return": 22.27741717367533,
+          "mean_success_weighted_directness": 0.9638572810538477
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000345000-g000276.json",
+        "scenario_seeds": [
+          4230764316428327505,
+          7310779066951626184,
+          6812903178096184537,
+          2476658930015365515,
+          8259962650937942449,
+          5847337547430900385,
+          6516117027241403385,
+          5756586557963842090,
+          6310526197408299430,
+          570967194951995523
+        ],
+        "wall_seconds": 18517.728613916785
+      },
+      {
+        "steps": 347500,
+        "summary": {
+          "episodes": 10,
+          "success_rate": 1.0,
+          "collision_rate": 0.0,
+          "timeout_rate": 0.0,
+          "mean_success_time": 15.079999999999771,
+          "mean_navigation_time": 15.079999999999771,
+          "mean_path_length": 2.7122653370836556,
+          "mean_success_path_length": 2.7122653370836556,
+          "mean_return": 22.20890609741632,
+          "mean_success_weighted_directness": 0.9519848502297268
+        },
+        "scenario_file": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/evaluations/step-0000347500-g000278.json",
+        "scenario_seeds": [
+          4870997850556785588,
+          5130581806846147105,
+          964962893544318334,
+          4847570765779377054,
+          2342339580232442782,
+          7732863271695838361,
+          6371073702642227426,
+          4551896818547437768,
+          2939558250562797698,
+          7375837728841692165
+        ],
+        "wall_seconds": 18538.358125374652
+      }
+    ],
+    "status": "running",
+    "latest_checkpoint": "/Users/ketani/UMNClasses/Fall2026/CSCI5551/Semester_Project_Local/Results/mixed-full/td3/seed2/checkpoints/step-0000348750-g000279-00a91ca7"
+  },
+  "steps": 348750,
+  "updates": 346750,
+  "files": {
+    "model.zip": "22484419983418a195d53a79c00ba4ae726deba47eb5885e33b3ec240cd5c4ea",
+    "replay_buffer.pkl": "557beffd915f67af929babbb09959272dcffb46d10e2483842dda12ad68d7950",
+    "rng.json": "036e3bf2f5dd62ed678d44414e125e60e51f84d84027fc548a42f8d9bb021d62",
+    "environment.json": "fa3c3f50c18a77cafba1542a8e13f04c6bf70078d29e4eecec409246c64597aa",
+    "normalization.json": "f0044c6432dec50bcec70c790aac166edf45493e301fef61a4816ee81eb15348"
+  }
+}

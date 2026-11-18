@@ -1,0 +1,12 @@
+{
+  "beams": 72,
+  "lidar_range": 3.5,
+  "control_dt": 0.2,
+  "max_steps": 600,
+  "goal_radius": 0.2,
+  "goal_distance_scale": 8.485281374238571,
+  "static_count": 0,
+  "moving_count": 0,
+  "goal_only": false,
+  "scenario_split": "train"
+}

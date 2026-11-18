@@ -1,0 +1,7 @@
+algorithm,seed,status,steps,validation_success_rate,validation_collision_rate,validation_mean_reward
+sac,0,complete,350000,1.0,0.0,24.56355500011325
+sac,1,complete,350000,1.0,0.0,24.065254551074588
+sac,2,complete,350000,1.0,0.0,22.067959668333135
+td3,0,complete,350000,1.0,0.0,24.803148185536607
+td3,1,complete,350000,1.0,0.0,24.05943332983328
+td3,2,complete,350000,1.0,0.0,21.918390700756227
