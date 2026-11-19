@@ -10,3 +10,14 @@ New training is being done with training episodes that block the robots path nea
 
 In this first round of training the TD3 agent did seem to perform better with a slightly higher success rate and a much lower collision rate.
 However, the SAC agent had a slightly smaller path length on average and saved about a second per episode.
+
+## Training episode variability
+
+When training episodes are created the environment is created randomly.
+That is the starting and goal positions are determined randomly and the number of obstacles along with their position is also decided randomly.
+For the training I included a mix of difficulties as follows:
+|difficulty name|percentage of episodes with this difficulty|description|
+|empty|10%|no obstacles in environment|
+|sparse static|20%|up to two static obstacles in environment|
+|dense static|25%|up to six and at least three static obstacles in environment|
+|static and moving|45%|up to six and at least two static obstacles in environment with up to two moving obstacles included|
