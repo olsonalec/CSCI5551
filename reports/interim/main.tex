@@ -53,7 +53,7 @@ As a result, SAC is able to encourage exploration while helping reduce premature
 TD3 is also an off-policy actor-critic algorithm; however, TD3 was designed to reduce value-estimation errors that would otherwise destabilize similar deterministic continuous control algorithms \cite{Fujimoto_TD3}.
 TD3 addresses this by using two critic networks, delayed policy updates, and target-policy smoothing.
 Both DRL algorithms have previously been used in continuous robotic control problems, and DRL has been applied to mapless mobile robot navigation using local range sensing and relative target information \cite{Tai_Lei} \cite{8202312}.
-Comparing SAC and TD3 under the same navigation tasks will allows us to evaluate how differences in their policy-learning and value-estimation strategies affect navigation reliability, efficiency, and generalization \cite{Dobrevski_Skočaj_2021} \cite{Tai_Lei}.
+Comparing SAC and TD3 under the same navigation tasks will allow us to evaluate how differences in their policy-learning and value-estimation strategies affect navigation reliability, efficiency, and generalization \cite{Dobrevski_Skočaj_2021} \cite{Tai_Lei}.
 
 The experiments we complete will compare SAC, TD3, and the DWA under a common mapless goal-directed navigation framework.
 Each method will receive comparable local range measurements, the distance and bearing to the goal, and the robot's current motion information.
@@ -86,10 +86,12 @@ A simulated environment was created to train a robot and begin to investigate th
             \item Dense Static: Between three and six (inclusive) static obstacles in the environment.
             \item Static and Moving: Between two and six (inclusive) static obstacles in the environment with up to two moving obstacles
         \end{enumerate}
-        When training, $10\%$ of the episodes had difficult Empty, $20\%$ were Sparse Static, $25\%$ were Dense Static, and $40\%$ were Static and Moving.
+        When training, $10\%$ of the episodes had a difficulty level of Empty, $20\%$ were Sparse Static, $25\%$ were Dense Static, and $45\%$ were Static and Moving.
 
     \item Obstacles: Circular objects with a radius between $0.15$ and $0.28 \mathrm{m}$
 \end{itemize}
+
+\
 
 \section{Tasks and Timeline}
 
