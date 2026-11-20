@@ -4,6 +4,7 @@
 % \addbibresource{citations.bib}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{siunitx}
 
 \title{A Comparative Analysis of SAC, TD3, and DWA for Mapless Goal-Directed Navigation in Unknown Environments.}
 \author{
@@ -22,7 +23,7 @@ In many real-world settings, however, a prior map of the environment may not be 
 Mapless navigation methods allow a mobile robot to make navigation decisions without relying on a complete representation of the environment. 
 This project will investigate whether Deep Reinforcement Learning (DRL) methodologies can perform mapless navigation to reach a goal using range measurements collected from a LiDAR sensor, relative goal distance, and relative goal bearing. 
 Two DRL algorithms, Soft Actor-Critic (SAC) and Twin Delayed Deep Deterministic Policy Gradient (TD3), will be compared against the Dynamic Window Approach (DWA) under common environmental constraints. 
-Training will be completed inside a simulated physics environment with randomized unknown environments being generated. Evaluation of DRL algorithms alongside DWA will be done in both simulated environments and previously unseen real-world environments with the use of a TurtleBot2 mobile robot. 
+Training will be completed inside a simulated physics environment with randomized unknown environments being generated. Evaluation of DRL algorithms alongside DWA will be done in both simulated environments and previously unseen real-world environments with the use of a TurtleBot3 mobile robot. 
 Performance will be compared using measures such as navigation success, collision rate, path efficiency, and time to goal.
 
 \section{Problem Description}
@@ -61,12 +62,39 @@ SAC and TD3 will be trained in a physics-based simulation which will randomly ge
 DWA will operate without training as the classical baseline, since it is not a learned algorithm \cite{Fox_Burgand}.
 After training, the learned policies from SAC and TD3 will be frozen and evaluated together with DWA in previously unseen environments to ensure the performance reflects generalization rather than memorization.
 The methods will be compared using metrics such as goal-reaching success rate, collision rate, path length, travel time, path efficiency, and obstacle clearance.
-Once the simulated policies are reliably performing in the simulated environments, the same navigation approaches will be tested on a TurtleBot2 in controlled indoor environments to evaluate simulation to real transfer \cite{Tai_Lei} \cite{Yan_2D}.
+Once the simulated policies are reliably performing in the simulated environments, the same navigation approaches will be tested on a TurtleBot3 in controlled indoor environments to evaluate simulation to real transfer \cite{Tai_Lei} \cite{Yan_2D}.
+
+\section{Preliminary Results}
+Testing has been conducted to compare the performance of SAC and TD3. So far, this has only been done in a simulated environment. Future work for the remainder of the semester will focus on migrating it to the TurtleBot3 and testing in a real-world environment.
+
+\subsection{Simulation Environment Setup}
+A simulated environment was created to train a robot and begin to investigate the differences between SAC and TD3 before moving to the real TurtleBot3. The environment was setup with the following parameters:
+
+\begin{itemize}
+    \item Room: $6 \mathrm{m}$ x $6 \mathrm{m}$
+
+    \item LiDAR: $72$ beams at \ang{5} intervals; maximum range of $3.5 \mathrm{m}$
+
+    \item Start and Goal Positions: Randomly assigned somewhere in the room. A heading angle $\theta$ is also defined for the starting position and is the direction the robot is initially facing.
+
+    \item Goal: Success is defined as the robot reaching within $0.2 \mathrm{m}$ of the goal location.
+
+    \item Difficulty Levels: Four difficulty levels are defined:
+        \begin{enumerate}
+            \item Empty: No obstacles in the environment.
+            \item Sparse Static: Up to two static obstacles in the environment.
+            \item Dense Static: Between three and six (inclusive) static obstacles in the environment.
+            \item Static and Moving: Between two and six (inclusive) static obstacles in the environment with up to two moving obstacles
+        \end{enumerate}
+        When training, $10\%$ of the episodes had difficult Empty, $20\%$ were Sparse Static, $25\%$ were Dense Static, and $40\%$ were Static and Moving.
+
+    \item Obstacles: Circular objects with a radius between $0.15$ and $0.28 \mathrm{m}$
+\end{itemize}
 
 \section{Tasks and Timeline}
 
 \begin{enumerate}
-    \item Understand the TurtleBot2 and ROS for physics-based simulations and real-world experiments.
+    \item Understand the TurtleBot3 and ROS for physics-based simulations and real-world experiments.
 
     \item Understand basics of reinforcement learning, and more specifically, how it can be used for mobile robot navigation in an unknown environment.
 
@@ -74,14 +102,14 @@ Once the simulated policies are reliably performing in the simulated environment
 
     \item Implement the three methods (SAC, TD3, DWA) in a simulated environment to evaluate differences.
 
-    \item Experiment with these algorithms in the real-world by testing them on the TurtleBot2.
+    \item Experiment with these algorithms in the real-world by testing them on the TurtleBot3.
 \end{enumerate}
 
 \begin{itemize}
     \item October 12 - 25
 
         \begin{itemize}
-            \item Work on tasks 1 and 2, focusing on the TurtleBot2 and reinforcement learning in the first week and starting to understand ROS in the second week (after the corresponding lecture in week 6).
+            \item Work on tasks 1 and 2, focusing on the TurtleBot3 and reinforcement learning in the first week and starting to understand ROS in the second week (after the corresponding lecture in week 6).
         \end{itemize}
 
     \item October 26 - November 8
@@ -106,11 +134,11 @@ Once the simulated policies are reliably performing in the simulated environment
 
 \section{Risk Management}
 
-Because we will be working with a physical robot, it is important to prioritize our safety and the safety of those around of us. In addition, because we will be using the TurtleBot2 for navigation in an obstacle-filled environment, we will need to find a suitable environment and obstacles that are robust to handle potential collisions with the TurtleBot2.
+Because we will be working with a physical robot, it is important to prioritize our safety and the safety of those around of us. In addition, because we will be using the TurtleBot3 for navigation in an obstacle-filled environment, we will need to find a suitable environment and obstacles that are robust to handle potential collisions with the TurtleBot3.
 
 If we have questions or concerns, we will contact Travis Henderson, who manages the robots for MnRI.
 
-Our project will start in a simulated environment and then transition into a real-world scenario, so we will also need to consider this sim-to-real gap and the problems that may arise, such as software and hardware compatibility on the TurtleBot2 compared with what we have running in our simulated environment.
+Our project will start in a simulated environment and then transition into a real-world scenario, so we will also need to consider this sim-to-real gap and the problems that may arise, such as software and hardware compatibility on the TurtleBot3 compared with what we have running in our simulated environment.
 
 Machine learning algorithms come with their own challenges that need to be overcome throughout the process of training and testing.
 Some potential risks include RL training instability, failure to converge on a policy, excessive training time or computational costs, and overfitting of SAC or TD3 in the training environment.
