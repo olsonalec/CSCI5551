@@ -1,10 +1,11 @@
-\documentclass[conference]{IEEEtran}
-\usepackage{graphicx, indentfirst} % Required for inserting images
-% \usepackage[backend = biber, style = numeric]{biblatex}
-% \addbibresource{citations.bib}
+\documentclass[conference, 11pt]{IEEEtran}
+\usepackage{graphicx, indentfirst}
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{siunitx}
+\usepackage{amsmath}
+
+
 
 \title{A Comparative Analysis of SAC, TD3, and DWA for Mapless Goal-Directed Navigation in Unknown Environments.}
 \author{
@@ -64,9 +65,6 @@ After training, the learned policies from SAC and TD3 will be frozen and evaluat
 The methods will be compared using metrics such as goal-reaching success rate, collision rate, path length, travel time, path efficiency, and obstacle clearance.
 Once the simulated policies are reliably performing in the simulated environments, the same navigation approaches will be tested on a TurtleBot3 in controlled indoor environments to evaluate simulation to real transfer \cite{Tai_Lei} \cite{Yan_2D}.
 
-% \section{Preliminary Results}
-% Testing has been conducted to compare the performance of SAC and TD3. So far, this has only been done in a simulated environment. Future work for the remainder of the semester will focus on migrating it to the TurtleBot3 and testing in a real-world environment.
-
 \section{Methods}
 This section describes the simulated environment, the learning problem given to each agent, and the configuration of the two DRL algorithms for this first training round.
 
@@ -74,17 +72,17 @@ This section describes the simulated environment, the learning problem given to 
 A simulated environment was created to train a robot and begin to investigate the differences between SAC and TD3 before moving to the real TurtleBot3. The environment uses the MuJoCo physics engine \cite{Todorov_MuJoCo} with a model of the TurtleBot3 Burger, and the agents were trained with the Stable-Baselines3 implementations of SAC and TD3 \cite{Raffin_SB3}. The environment was setup with the following parameters:
 
     \begin{itemize}
-        \item Room: $6 \mathrm{m}$ x $6 \mathrm{m}$
+        \item \textbf{Room}: $6 \mathrm{m}$ x $6 \mathrm{m}$ with walls on all sides.
     
-        \item LiDAR: $72$ beams at \ang{5} intervals; maximum range of $3.5 \mathrm{m}$
+        \item \textbf{LiDAR}: $72$ beams at \ang{5} intervals, therefore covering all \ang{360}; maximum range of $3.5 \mathrm{m}$, which is the maximum range of the LDS-01 sensor on the TurtleBot3 Burger.
 
-        \item Control: A new velocity command is issued every $0.2 \mathrm{s}$ ($5 \mathrm{Hz}$)
+        \item \textbf{Control}: A new velocity command is issued every $0.2 \mathrm{s}$ ($5 \mathrm{Hz}$)
     
-        \item Start and Goal Positions: Randomly assigned somewhere in the room. A heading angle $\theta$ is also defined for the starting position and is the direction the robot is initially facing.
+        \item \textbf{Start and Goal Positions}: Selected randomly from a uniform distribution within $2.5 \mathrm{m}$ of the center of the room. A heading angle $\theta$ is also defined for the starting position and is the direction the robot is initially facing.
     
-        \item Goal: Success is defined as the robot reaching within $0.2 \mathrm{m}$ of the goal location.
+        \item \textbf{Goal}: Success is defined as the robot reaching within $0.2 \mathrm{m}$ of the goal location.
 
-        \item Episode Termination: An episode ends when one of the following happens:
+        \item \textbf{Episode Termination}: An episode ends when one of the following happens:
             \begin{enumerate}
                 \item The robot reaches the goal location.
     
@@ -93,23 +91,63 @@ A simulated environment was created to train a robot and begin to investigate th
                 \item The robot reaches $600$ control steps, which is $120 \mathrm{s}$, and this causes the program to timeout.
             \end{enumerate}
     
-        \item Difficulty Levels: Four difficulty levels are defined:
+        \item \textbf{Difficulty Levels}: Four difficulty levels are defined:
             \begin{enumerate}
                 \item Empty: No obstacles in the environment.
-                \item Sparse Static: Up to two static obstacles in the environment.
+                \item Sparse Static: One or two static obstacles in the environment.
                 \item Dense Static: Between three and six (inclusive) static obstacles in the environment.
-                \item Static and Moving: Between two and six (inclusive) static obstacles in the environment with up to two moving obstacles
+                \item Static and Moving: Between two and six (inclusive) static obstacles in the environment with one or two moving obstacles.
             \end{enumerate}
-            When training, $10\%$ of the episodes had a difficulty level of Empty, $20\%$ were Sparse Static, $25\%$ were Dense Static, and $45\%$ were Static and Moving.
+            These obstacles are also placed at random in the room. When training, $10\%$ of the episodes had a difficulty level of Empty, $10\%$ were Sparse Static, $15\%$ were Dense Static, and $65\%$ were Static and Moving.
     
-        \item Obstacles: Circular objects with a radius between $0.15$ and $0.28 \mathrm{m}$. Moving obstacles oscillate with an amplitude of $0.25 \mathrm{m}$ and a period of $12 \mathrm{s}$, giving a peak speed of approximately $0.13 \mathrm{m/s}$.
+        \item \textbf{Obstacles}: Circular objects with a radius between $0.15$ and $0.28 \mathrm{m}$. Moving obstacles oscillate in a sinusoidal pattern with an amplitude of $0.25 \mathrm{m}$ and a period of $12 \mathrm{s}$, which means their peak speed is approximately $0.13 \mathrm{m/s}$. Obstacles are placed so that the space swept by any two of them is separated by at least $0.35 \mathrm{m}$. This leaves a gap wide enough for the robot to pass through and also makes sure that no obstacle interferes with the start or goal location.
     \end{itemize}
 
 \subsection{Observation and Action Spaces}
-At each control step, the agent receives a $77$-dimensional observation vector. $72$ of these values are the LiDAR data for each beam, and the other $5$ describe the robot's motion and the goal. 
-The remaining $5$ values describe the goal and the robot's own motion: the distance to the goal, the bearing angle to the goal, and the robot's current velocities.
+At each control step, the agent receives a $77$-dimensional observation vector. It is broken down into the following components:
+    \begin{itemize}
+        \item $72$ of these values are the LiDAR data for each beam. The distance measured is then divided by $3.5 \mathrm{m}$, which means this data lies in the range $[0, 1]$.
+
+        \item The distance from the robot's current location to the goal location, divided by the distance between two corners of the room so that the value lies in $[0, 1]$. The room is $6 \mathrm{m}$ x $6 \mathrm{m}$, so this diagonal distance is $\sqrt{6^2 + 6^2} = \sqrt{72} \approx 8.49 \mathrm{m}$.
+
+        \item The sine and cosine of the angle to the goal location, relative to the robot's heading. The domain of these values is already $[-1, 1]$, so no adjustment is needed.
+
+        \item The robot's linear velocity $v$ and angular velocity $\omega$, scaled to fall in the range $[-1, 1]$ by dividing by the maximum possible values for the TurtleBot3: $0.22 \mathrm{m/s}$ for $v$ and $2.84 \mathrm{rad/s}$ for $\omega$.
+    \end{itemize}
+
+The robot has neither a map nor knowledge of the positions or velocities of the obstacles.
 
 Each action is a $2$-dimensional vector that stores a linear velocity $v$ and an angular velocity $\omega$ which are used to drive the robot.
+
+\subsection{Reward Function}
+The reward at each step of the training is defined by the following equation:
+
+    \begin{equation}
+        r_t = 5(d_{t-1} - d_t) - 0.01 + r_{\mathrm{prox}} + r_{\mathrm{term}}
+    \end{equation}
+
+The parameters for the equation are:
+    \begin{itemize}
+        \item $t$: The current timestep.
+
+        \item $d_t$: The distance in meters from the robot to the goal location after timestep $t$.
+
+        \item $r_{\mathrm{prox}}$: Proximity from the robot to the nearest wall or obstacle, defined as:
+            \begin{equation}
+                \label{eq:proximity}
+                r_{\mathrm{prox}} = \begin{cases}
+                0 & l_{min} \geq 0.3 \\
+                -0.05(l_{min} / 0.3) & l_{min} < 0.3
+                \end{cases}
+            \end{equation}
+            where $l_{min}$ is the minimum LiDAR reading in meters.
+
+        \item $r_{\mathrm{term}}$: Terminal reward, $10$ if the robot reaches the goal, $-10$ if it collides with a wall or obstacle, and $0$ elsewise.
+    \end{itemize}
+
+\subsection{Soft Actor-Critic}
+
+\subsection{Twin Delayed Deep Deterministic Policy Gradient}
 
 
 \section{Tasks and Timeline}
