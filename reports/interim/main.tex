@@ -28,7 +28,7 @@ Training will be completed inside a simulated physics environment with randomize
 Performance will be compared using measures such as navigation success, collision rate, path efficiency, and time to goal.
 
 \section{Problem Description}
-Autonomous mobile robots are widespread in society today and have applications in many domains, including navigating warehouses \cite{keith2024reviewautonomousmobilerobots}, healthcare environments \cite{electronics12234791}, retail, hospitality, and security and surveillance \cite{cognominal2021evolving}.
+Autonomous mobile robots are widespread in society today and have applications in many domains, including navigating warehouses \cite{keith2024reviewautonomousmobilerobots}, healthcare environments \cite{electronics12234791}, agriculture, manufacturing, and transportation \cite{electronics13030542}.
 Many of these applications of autonomous mobile robots allow for the robot to be given a clear definition of the environment it is tasked with navigating; for example, warehouses and hospitals are clearly defined environments where the locations of stations and equipment are generally well known.
 In these applications, a detailed map of the environment may be available, allowing the robot to localize itself and globally plan a route to its destination. 
 In other applications, a prior map is not available, which requires the robot to navigate the environment using another technique, such as, simultaneous localization and mapping (SLAM), where the robot can estimate its position while constructing a representation of the environment \cite{Durrant_Bailey} \cite{Loganathan}.
@@ -69,6 +69,7 @@ Once the simulated policies are reliably performing in the simulated environment
 This section describes the simulated environment, the learning problem given to each agent, and the configuration of the two DRL algorithms for this first training round.
 
 \subsection{Simulation Environment Setup}
+
 A simulated environment was created to train a robot and begin to investigate the differences between SAC and TD3 before moving to the real TurtleBot3. The environment uses the MuJoCo physics engine \cite{Todorov_MuJoCo} with a model of the TurtleBot3 Burger, and the agents were trained with the Stable-Baselines3 implementations of SAC and TD3 \cite{Raffin_SB3}. The environment was setup with the following parameters:
 
     \begin{itemize}
@@ -98,7 +99,7 @@ A simulated environment was created to train a robot and begin to investigate th
                 \item Dense Static: Between three and six (inclusive) static obstacles in the environment.
                 \item Static and Moving: Between two and six (inclusive) static obstacles in the environment with one or two moving obstacles.
             \end{enumerate}
-            These obstacles are also placed at random in the room. When training, $10\%$ of the episodes had a difficulty level of Empty, $10\%$ were Sparse Static, $15\%$ were Dense Static, and $65\%$ were Static and Moving.
+            These obstacles are also placed at random in the room. During training, $10\%$ of the episodes had a difficulty level of Empty, $10\%$ were Sparse Static, $15\%$ were Dense Static, and $65\%$ were Static and Moving.
     
         \item \textbf{Obstacles}: Circular objects with a radius between $0.15$ and $0.28 \mathrm{m}$. Moving obstacles oscillate in a sinusoidal pattern with an amplitude of $0.25 \mathrm{m}$ and a period of $12 \mathrm{s}$, which means their peak speed is approximately $0.13 \mathrm{m/s}$. Obstacles are placed so that the space swept by any two of them is separated by at least $0.35 \mathrm{m}$. This leaves a gap wide enough for the robot to pass through and also makes sure that no obstacle interferes with the start or goal location.
     \end{itemize}
@@ -120,8 +121,9 @@ The robot has neither a map nor knowledge of the positions or velocities of the 
 Each action is a $2$-dimensional vector that stores a linear velocity $v$ and an angular velocity $\omega$ which are used to drive the robot.
 
 \subsection{Reward Function}
+The reward function used combines progress toward the goal, time penalty, obstacle-proximity penalty, and terminal reward.
+The same reward function is currently used for both the SAC and TD3 agents so that differences in performance can be tracked to differences in the algorithms rather than differences in task objectives. 
 The reward at each step of the training is defined by the following equation:
-
     \begin{equation}
         r_t = 5(d_{t-1} - d_t) - 0.01 + r_{\mathrm{prox}} + r_{\mathrm{term}}
     \end{equation}
@@ -130,24 +132,68 @@ The parameters for the equation are:
     \begin{itemize}
         \item $t$: The current timestep.
 
-        \item $d_t$: The distance in meters from the robot to the goal location after timestep $t$.
+        \item $d_t$: The distance in meters from the robot to the goal location at timestep $t$.
+
+        \item $l_t$: The current smallest LiDAR measurement.
 
         \item $r_{\mathrm{prox}}$: Proximity from the robot to the nearest wall or obstacle, defined as:
             \begin{equation}
-                \label{eq:proximity}
-                r_{\mathrm{prox}} = \begin{cases}
-                0 & l_{min} \geq 0.3 \\
-                -0.05(l_{min} / 0.3) & l_{min} < 0.3
-                \end{cases}
+                max\Big(0, \frac{0.30-l_t}{0.30}\Big)
             \end{equation}
-            where $l_{min}$ is the minimum LiDAR reading in meters.
 
-        \item $r_{\mathrm{term}}$: Terminal reward, $10$ if the robot reaches the goal, $-10$ if it collides with a wall or obstacle, and $0$ elsewise.
+        \item $r_{\mathrm{term}}$: Terminal reward, $+10$ if the robot reaches the goal, $-10$ if it collides with a wall or obstacle, and $0$ else wise.
     \end{itemize}
+
+For $r_{term}$, success is measured as the robot reaching within $0.20 \mathrm{m}$ of the goal without any collisions.
+Contact with an obstacle or wall, leaving the boundaries, or excessive tile are all counted as collisions or failure. 
+A training episode terminates upon either success or collision, and if a training episode exceeds 600 steps, the episode is terminated with no reward being given. 
+
+The coefficients chosen are initial heuristic settings only intended to provide a starting point to gather useful feedback throughout training.
+Further refinements to the reward function, and the coefficients used, will need to be done. 
+The progress coefficient of 5 rewards the robot for making forward progress, even if the progress is relatively small. For example, if the robot moves $0.02 \mathrm{m}$ closer to the goal, the reward would be $0.10$. 
+The reward for small increments towards the goal is meant to offset the time penalty of $-0.01$ that is encouraged when the robot is inactive and adds to the penalty of the robot making unnecessary movements. 
+
+The proximity term introduces a gradual penalty when the robot travels too close to an obstacle or wall.
+The penalty is incurred when a LiDAR measurement is less than $0.30 \mathrm{m}$.
+That is, if the robot detects anything less than $0.30 \mathrm{m}$ from the origin of the LiDAR reading, it incurs a penalty. 
+The $0.30 \mathrm{m}$ radius is a local caution region and not meant to represent any physically validated stopping distance. 
+
+Finally, the terminal values of $+10$ and $-10$, for success and collision respectively, make those outcomes more impactful than any other movement reward. 
+Thus, the agent learns to prioritize both reaching the goal and avoiding collisions. 
+These choices allow for an initial balance between progress, speed, and clearance, but their effectiveness still needs to be revised based on the results of training and evaluation discussed in Section \ref{initial-results}. 
+
+The current reward function has several consequences that impact the behavior being learned.
+Since progress is measured using a straight line goal distance, any necessary obstacle avoidance will result in a negative reward (since the robot initially moves farther away from the goal). 
+The agent must then learn that a temporary loss of progress can lead to better future outcomes. 
+Additionally, the progress reward is accumulated by total net reduction of distance to goal rather than total distance traveled. 
+So any additional travel is discouraged with the time penalty and potentially with the proximity penalty. 
+There is no penalty for reversing, sharp turns, or changing actions abruptly.
+As a result, the reward encourages navigation efficiency but does not require smooth, or energy efficient, movement. 
 
 \subsection{Soft Actor-Critic}
 
+Soft Actor-Critic is an off-policy actor-critic algorithm for continuous control. Its actor represents a probability distribution over actions, while its critic estimates the value of taking an action from a given observation. 
+Experience is stored in a replay buffer and reused during learning. 
+SAC optimizes both expected return and policy entropy, encouraging exploration while learning actions that improve task performance. 
+
+In the SAC implementation used in this project, the stochastic actor is combined with the two critics and the smaller critic estimate is used when constructing learning targets.
+The entropy coefficient is set to target $-2$ but is adjusted automatically to regulate policy randomness. 
+The actor and critics are updated during each training iteration and the entropy regularization affects the agents learning objective bus is not captured as part of the results. 
+During evaluation, deterministic action selection is used to measure the learned policy without stochastic action sampling. \cite{haarnojaSAC_Applications}
+
 \subsection{Twin Delayed Deep Deterministic Policy Gradient}
+Twin Delayed Deep Deterministic Policy Gradient is also a off-policy actor-critic algorithm that extends DDPG.
+Its actor produces a deterministic action, while exploration is introduced separately during data collection. 
+TD3 addresses value overestimation using two critics and the smaller target actions when construction critic targets.
+These mechanisms are intended to reduce the effect of inaccurate value estimations on policy learning. 
+
+TD3 uses a Gaussian exploration noise in the internally normalized action space. 
+The actor and target networks are updated once every two critic-training iterations. 
+Target-policy smoothing uses a noise standard deviation of $0.2$, clipped to $\pm 0.5$ in normalized coordinates; this is separate from the exploration noise applied during environment interaction.
+The main distinction in comparison is therefore how exploration in incorporated: SAC learns a stochastic policy with entropy regularization, whereas TD3 trains a deterministic policy using externally added noise. 
+Both are evaluated deterministically, and neither mechanism alone establishes which algorithm performs better on the navigation task. 
+
+\section{Initial Results} \label{initial-results}
 
 
 \section{Tasks and Timeline}
