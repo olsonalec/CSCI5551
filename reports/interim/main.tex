@@ -34,7 +34,7 @@ In these applications, a detailed map of the environment may be available, allow
 In other applications, a prior map is not available, which requires the robot to navigate the environment using another technique, such as, simultaneous localization and mapping (SLAM), where the robot can estimate its position while constructing a representation of the environment \cite{Durrant_Bailey} \cite{Loganathan}.
 The standard approach of using SLAM along with a path planning algorithm and control system performs well in static environments.
 However, such static environments are not always guaranteed, and with the introduction of dynamically changing environments or stricter time restrictions, the standard approach becomes increasingly less feasible. 
-With dynamic environments, sustaining a map of the environment becomes impractical with constantly changing landmarks and obstacles leading to a high computational cost as the environment changes.
+With dynamic environments, sustaining a map of the environment becomes impractical with constantly changing landmarks and obstacles leading to a high computational cost as the environment changes \cite{past-present-future-slam}.
 Additionally, there may be environments in which the robot needs to be operational immediately without time to learn the environment through exploration. 
 For such cases, mapless goal-directed navigation methods can be employed which would allow the robot to only use local sensor information along with relative goal information \cite{Dobrevski_Skočaj_2021}.
 This project aims to explore such kinds of navigation methods in mobile robots that may be deployable in previously unseen dynamic environments \cite{Tai_Lei}.
@@ -47,7 +47,7 @@ Then, velocities are chosen via the objective function which considers progress 
 Choosing velocities by maximizing this objective function allows the DWA to perform mapless goal-directed navigation in unseen environments without needing a learning algorithm or any previous training.
 \par
 The two DRL algorithms chosen for this project are Soft Actor-Critic (SAC) and Twin Delayed Deep Deterministic Policy Gradient (TD3).
-These DRL algorithms were chosen because they are both designed for continuous control problems which makes them suitable for robot navigation problems where state, observation, and especially action spaces are all continuous. 
+These DRL algorithms were chosen because they are both designed for continuous control problems which makes them suitable for robot navigation problems where state, observation, and especially action spaces are all continuous \cite{deJesus_SAC_Nav} \cite{Cimurs_TD3_Nav}.
 SAC is an off-policy actor-critic algorithm that is capable of learning both a policy and value function \cite{Haarnoja_SAC}.
 SAC also maximizes the expected reward while also encouraging policy entropy.
 As a result, SAC is able to encourage exploration while helping reduce premature convergence due to poor decisions.
@@ -63,7 +63,7 @@ SAC and TD3 will be trained in a physics-based simulation which will randomly ge
 DWA will operate without training as the classical baseline, since it is not a learned algorithm \cite{Fox_Burgand}.
 After training, the learned policies from SAC and TD3 will be frozen and evaluated together with DWA in previously unseen environments to ensure the performance reflects generalization rather than memorization.
 The methods will be compared using metrics such as goal-reaching success rate, collision rate, path length, travel time, path efficiency, and obstacle clearance.
-Once the simulated policies are reliably performing in the simulated environments, the same navigation approaches will be tested on a TurtleBot3 in controlled indoor environments to evaluate simulation to real transfer \cite{Tai_Lei} \cite{Yan_2D}.
+Once the simulated policies are reliably performing in the simulated environments, the same navigation approaches will be tested on a TurtleBot3, implemented with ROS \cite{ros-open-source-operating-system}, in controlled indoor environments to evaluate simulation to real transfer \cite{Tai_Lei} \cite{Yan_2D}.
 
 \section{Methods}
 This section describes the simulated environment, the learning problem given to each agent, and the configuration of the two DRL algorithms for this first training round.
@@ -182,7 +182,7 @@ The actor and critics are updated during each training iteration and the entropy
 During evaluation, deterministic action selection is used to measure the learned policy without stochastic action sampling. \cite{haarnojaSAC_Applications}
 
 \subsection{Twin Delayed Deep Deterministic Policy Gradient}
-Twin Delayed Deep Deterministic Policy Gradient is also a off-policy actor-critic algorithm that extends DDPG.
+Twin Delayed Deep Deterministic Policy Gradient is also a off-policy actor-critic algorithm that extends DDPG \cite{continuous-control-deep-rl}.
 Its actor produces a deterministic action, while exploration is introduced separately during data collection. 
 TD3 addresses value overestimation using two critics and the smaller target actions when construction critic targets.
 These mechanisms are intended to reduce the effect of inaccurate value estimations on policy learning. 
@@ -194,7 +194,7 @@ The main distinction in comparison is therefore how exploration in incorporated:
 Both are evaluated deterministically, and neither mechanism alone establishes which algorithm performs better on the navigation task. 
 
 \section{Initial Results} \label{initial-results}
-Each training round ran for $350,000$ steps, and the robot was given $600$ steps to reach the goal for each episode. As described earlier, if the robot could not reach the goal within this time, the episode was deemed a failure. Therefore, the minimum number of full episodes that the robot could train for was $\frac{350,000}{600} = 583$. However, the robot was able to perform many more episodes because it was generally able to reach the goal well under budget.
+Each training round ran for $350,000$ steps, and the robot was given $600$ steps to reach the goal for each episode. As described earlier, if the robot could not reach the goal within this time, the episode was deemed a failure. Therefore, the minimum number of full episodes that the robot could train for was $\frac{350,000}{600} = 583$. However, the robot was able to perform many more episodes because it was generally able to reach the goal well under budget. For this first part of training, we ran three seed rounds each for SAC and TD3.
 
 Figures \ref{fig:success_rate_sac_seed0}, \ref{fig:success_rate_td3_seed0}, \ref{fig:collision_rate_sac_seed0}, and \ref{fig:collision_rate_td3_seed0} show the success and collision rates for one round of training with SAC and TD3. The success rate graphs clearly show that the success rate, shown as the rolling average of 50 episodes, quickly increases in the first few hundred episodes and then converges around the mid 90s for the rest of the training. For training with TD3, the success rate reached its maximum much more quickly, within around 200 episodes, compared to SAC. In contrast, the collision rate generally decreased after a few hundred episodes but never consistently reached $0$.
 
