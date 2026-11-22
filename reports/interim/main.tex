@@ -145,7 +145,7 @@ The parameters for the equation are:
     \end{itemize}
 
 For $r_{term}$, success is measured as the robot reaching within $0.20 \mathrm{m}$ of the goal without any collisions.
-Contact with an obstacle or wall, leaving the boundaries, or excessive tile are all counted as collisions or failure. 
+Contact with an obstacle or wall, leaving the boundaries, or excessive time are all counted as collisions or failure. 
 A training episode terminates upon either success or collision, and if a training episode exceeds 600 steps, the episode is terminated with no reward being given. 
 
 The coefficients chosen are initial heuristic settings only intended to provide a starting point to gather useful feedback throughout training.
@@ -196,19 +196,25 @@ Both are evaluated deterministically, and neither mechanism alone establishes wh
 \section{Initial Results} \label{initial-results}
 Each training round ran for $350,000$ steps, and the robot was given $600$ steps to reach the goal for each episode. As described earlier, if the robot could not reach the goal within this time, the episode was deemed a failure. Therefore, the minimum number of full episodes that the robot could train for was $\frac{350,000}{600} = 583$. However, the robot was able to perform many more episodes because it was generally able to reach the goal well under budget. For this first part of training, we ran three seed rounds each for SAC and TD3.
 
-Figures \ref{fig:success_rate_sac_seed0}, \ref{fig:success_rate_td3_seed0}, \ref{fig:collision_rate_sac_seed0}, and \ref{fig:collision_rate_td3_seed0} show the success and collision rates for one round of training with SAC and TD3. The success rate graphs clearly show that the success rate, shown as the rolling average of 50 episodes, quickly increases in the first few hundred episodes and then converges around the mid 90s for the rest of the training. For training with TD3, the success rate reached its maximum much more quickly, within around 200 episodes, compared to SAC. In contrast, the collision rate generally decreased after a few hundred episodes but never consistently reached $0$.
+Figures \ref{fig:success_rate_sac_seed0}, \ref{fig:success_rate_td3_seed0}, \ref{fig:collision_rate_sac_seed0}, and \ref{fig:collision_rate_td3_seed0} show the rewards and collision rates for one round of training with SAC and TD3.
+The reward graphs clearly show that the rewards per episode, shown as the rolling average of 50 episodes, quickly increases in the first few hundred episodes and then converges around the mid 30's for the rest of the training.
+% For training with TD3, the success rate reached its maximum much more quickly, within around 200 episodes, compared to SAC.
+In contrast, the collision rate generally decreased after a few hundred episodes but never consistently reached $0$.
+The variability in both the reward values and the collision rate can likely be accounted for in either the learning methods each algorithm uses and in a suboptimal reward function.
+The reward function used for this round of training had not yet been tuned, or optimized, to properly reflect the exact goals of the agents. 
+After future tuning of the parameters used in training the collision rate may decrease further and allow the reward values to smooth out as well.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{success_rate_sac_seed0.png}
-    \caption{Success rate for one round of training with SAC}
+    \includegraphics[width=\linewidth]{reward_sac_seed0.png}
+    \caption{Rewards for one round of training with SAC}
     \label{fig:success_rate_sac_seed0}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{success_rate_td3_seed0.png}
-    \caption{Success rate for one round of training with TD3}
+    \includegraphics[width=\linewidth]{reward_td3_seed0.png}
+    \caption{Rewards for one round of training with TD3}
     \label{fig:success_rate_td3_seed0}
 \end{figure}
 
